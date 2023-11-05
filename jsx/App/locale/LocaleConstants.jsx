@@ -14,7 +14,7 @@ export const DEFAULT_LOCALE = ENGLISH;
 
 // NavBar text (header).
 export const navBarTitleText = {
-  [ENGLISH]: "LingView: ELAN and FLEx Web Display",
+  [ENGLISH]: "LingView Language Resource",
   [ESPANOL]: "LingView: Pantella Web ELAN y FLEx",
   [FRANCAIS]: "LingView: Affichage Web ELAN et FLEx",
 };
