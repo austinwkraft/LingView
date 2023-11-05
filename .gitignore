@@ -1,9 +1,0 @@
-**/.DS_Store
-node_modules/
-.idea/
-bundle/
-bundle-online/
-bundle-offline/
-build/
-data/json_files/*.json
-data/search_index.json
