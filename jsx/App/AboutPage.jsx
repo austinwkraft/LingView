@@ -5,8 +5,7 @@ import { TranslatableText } from './locale/TranslatableText.jsx'
 const aboutPageJSX = {
   [ENGLISH]:
     <div>
-      <p>Input content here :) </p>
-      <p>To customize this welcome text, edit the jsx/App/AboutPage.jsx file, then run webpack for your changes to take effect. </p>
+      <p>This site is a pilot adaptation of LingView by Austin Kraft, for educational purposes.</p>
     </div>,
   [ESPANOL]:
     <div>
