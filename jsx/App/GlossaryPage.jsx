@@ -5,8 +5,7 @@ import { TranslatableText } from './locale/TranslatableText.jsx'
 const glossaryPageJSX = {
   [ENGLISH] :
     <div>
-      <p>Input glossary here :) </p>
-      <p>To customize this welcome text, edit the jsx/App/GlossaryPage.jsx file, then run webpack for your changes to take effect. </p>
+      <p>This page could contain short descriptions of relevant glossing abbreviations, and/or a mapping between Leipzig-style glosses and language-internal terminology. </p>
     </div>,
   [ESPANOL] :
     <div>
