@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <preferences version="1.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/Prefs_v1.1.xsd">
+    <prefList key="MultiTierViewer.TierOrder">
+        <String>ortho-spg</String>
+        <String>morph</String>
+        <String>gloss</String>
+        <String>trans-eng</String>
+        <String>trans-ind</String>
+        <String>notes</String>
+    </prefList>
     <pref key="FrameSize">
         <Object class="java.awt.Dimension">1440,783</Object>
     </pref>
