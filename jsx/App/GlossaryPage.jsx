@@ -10,6 +10,7 @@ const glossaryPageJSX = {
   [KANIENKEHA] :
     <div>
       <p>A Kanien'kéha translation of this page is in progress. </p>
+    </div>,
 };
 
 export function GlossaryPage() {
