@@ -1,21 +1,16 @@
 import React from 'react';
-import { ENGLISH, ESPANOL, FRANCAIS } from './locale/LocaleConstants.jsx';
+import { ENGLISH, KANIENKEHA } from './locale/LocaleConstants.jsx';
 import { TranslatableText } from './locale/TranslatableText.jsx'
 
 const aboutPageJSX = {
   [ENGLISH]:
     <div>
-      <p>This site is a pilot adaptation of LingView by Austin Kraft, for educational purposes.</p>
+      <p>This site is a pilot adaptation of LingView by students at McGill University in collaboration with Kanienke'há:ka, for educational purposes.</p>
+      <p>The purpose of this website is to support Kanien'kéha language learners. The stories available on this website are shared with the consent of the speakers.</p>
     </div>,
-  [ESPANOL]:
+  [KANIENKEHA]:
     <div>
-      <p>Ingrese el contenido aquí :) </p>
-      <p>Para personalizar este texto de bienvenida, edite el archivo 'jsx/App/AboutPage.jsx' y luego ejecute el paquete web para que los cambios surtan efecto. </p>
-    </div>,
-  [FRANCAIS]:
-    <div>
-      <p>Saisissez le contenu ici :) </p>
-      <p>Pour personnaliser ce texte de bienvenue, modifiez le fichier 'jsx/App/AboutPage.jsx', puis exécutez webpack pour que vos modifications prennent effet. </p>
+      <p>Ne ki' website ioteríhonte ne á:iontste' sénha aiòn:ronke' tsi aiontahónhsatate' ne okara'shòn:'a. McGill University ronteweiénhstha nok ò:ni Kanien'kehá:ka rotíhson.</p>
     </div>,
 };
 
