@@ -39,8 +39,13 @@ function Row({ numSlots, values, tier }) {
 		}
 		// Create element with correct 'colSpan' width:
 		const size = String(endSlot - startSlot);
-		const explain = glossExplanation(v);
-		output.push(<td key={id.generate()} colSpan={size} title={explain}>{text}</td>);
+		if (tier == 'morpheme gloss'){ // Only add glossing explanation on the tier corresponding to the morpheme gloss
+			const explain = glossExplanation(v);
+			output.push(<td key={id.generate()} colSpan={size} title={explain}>{text}</td>);
+		}
+		else {
+			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
+		}
 		currentSlot = endSlot;
 	}
 	// Fill blank space at end of table row:
