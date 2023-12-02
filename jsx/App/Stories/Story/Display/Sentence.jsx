@@ -39,7 +39,10 @@ function Row({ numSlots, values, tier }) {
 		}
 		// Create element with correct 'colSpan' width:
 		const size = String(endSlot - startSlot);
-		output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
+		if (tier == 'morpheme gloss') {
+			const explain = glossExplanation(v);
+		}
+		output.push(<td key={id.generate()} colSpan={size} title={explain}>{text}</td>);
 		currentSlot = endSlot;
 	}
 	// Fill blank space at end of table row:
@@ -48,6 +51,12 @@ function Row({ numSlots, values, tier }) {
 		output.push(<td key={id.generate()} colSpan={diff} />);
 	}
 	return <tr data-tier={htmlEscape(tier)}>{output}</tr>;
+}
+
+function glossExplanation( { morph }) {
+	// I/P: morph, the Leipzig-style gloss
+	// O/P: single string that explains the gloss
+	return 'test explanation';
 }
 
 export function Sentence({ sentence }) {
