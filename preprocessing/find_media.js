@@ -107,7 +107,7 @@ function mediaSearch(filename, mediaType, mediaFiles, extensions) {
       mediaFile = remoteMedia.filename;
       if (global.missingMediaFiles) global.missingMediaFiles.push(`${remoteMedia.filename} (at ${remoteMedia.remoteUrl})`);
     } else if (process.env.MISSING_MEDIA === 'link') {
-      mediaFile = remoteMedia.remoteUrl;
+      mediaFile = "https://github.com/austinwkraft/LingView/releases/download/v0.1.0/20230911-MM-Teharenhsahkhwa-story.mp4"; //= remoteMedia.remoteUrl;
     } else {
       console.warn(`Error during remote media search: Unsupported value ${process.env.MISSING_MEDIA} for MISSING_MEDIA env variable.`);
     }
