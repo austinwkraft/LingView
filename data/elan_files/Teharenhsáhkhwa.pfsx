@@ -17,7 +17,7 @@
         <String>morpheme gloss</String>
     </pref>
     <pref key="SelectionEndTime">
-        <Long>1640</Long>
+        <Long>5525</Long>
     </pref>
     <pref key="LayoutManager.MediaAreaHeight">
         <Int>40</Int>
@@ -60,6 +60,7 @@
             <Int>75</Int>
         </pref>
     </prefGroup>
+    <prefGroup key="TierFonts"/>
     <prefList key="CommentViewer.Columns.Order">
         <String>Start Time</String>
         <String>End Time</String>
@@ -93,12 +94,9 @@
         <Int>97</Int>
     </pref>
     <pref key="SelectionBeginTime">
-        <Long>380</Long>
+        <Long>5525</Long>
     </pref>
-    <prefList key="MultiTierViewer.HiddenTiers">
-        <String>notes</String>
-        <String>notes-cp</String>
-    </prefList>
+    <prefList key="MultiTierViewer.HiddenTiers"/>
     <prefGroup key="BAS - WebMAUS Basic">
         <pref key="LANGUAGE">
             <String>deu-DE</String>
@@ -118,15 +116,12 @@
         </pref>
     </prefGroup>
     <pref key="TimeScaleBeginTime">
-        <Long>0</Long>
+        <Long>2388</Long>
     </pref>
     <pref key="MediaTime">
-        <Long>380</Long>
+        <Long>5405</Long>
     </pref>
     <prefGroup key="TierColors">
-        <pref key="notes">
-            <Object class="java.awt.Color">0,160,160</Object>
-        </pref>
         <pref key="Kanien'kéha">
             <Object class="java.awt.Color">90,0,0</Object>
         </pref>
@@ -138,9 +133,8 @@
         <String>word-by-word translation</String>
         <String>morpheme breaks</String>
         <String>morpheme gloss</String>
-        <String>notes</String>
-        <String>notes-cp</String>
     </prefList>
+    <prefGroup key="TierHighlightColors"/>
     <pref key="LayoutManager.SplitPaneDividerLocation">
         <Int>160</Int>
     </pref>
