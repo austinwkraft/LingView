@@ -14,13 +14,13 @@
         <Int>196</Int>
     </pref>
     <pref key="MultiTierViewer.ActiveTierName">
-        <String>Kanien'kéha</String>
+        <String>morpheme gloss</String>
     </pref>
     <pref key="SelectionEndTime">
         <Long>1640</Long>
     </pref>
     <pref key="LayoutManager.MediaAreaHeight">
-        <Int>296</Int>
+        <Int>40</Int>
     </pref>
     <pref key="SignalViewer.ZoomLevel">
         <Float>400.0</Float>
@@ -95,7 +95,10 @@
     <pref key="SelectionBeginTime">
         <Long>380</Long>
     </pref>
-    <prefList key="MultiTierViewer.HiddenTiers"/>
+    <prefList key="MultiTierViewer.HiddenTiers">
+        <String>notes</String>
+        <String>notes-cp</String>
+    </prefList>
     <prefGroup key="BAS - WebMAUS Basic">
         <pref key="LANGUAGE">
             <String>deu-DE</String>
@@ -136,6 +139,7 @@
         <String>morpheme breaks</String>
         <String>morpheme gloss</String>
         <String>notes</String>
+        <String>notes-cp</String>
     </prefList>
     <pref key="LayoutManager.SplitPaneDividerLocation">
         <Int>160</Int>
