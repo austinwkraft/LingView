@@ -80,7 +80,7 @@ function glossExplanation( { morph }) {
         }
     }
     // Return the explanation
-    const exp = expArray.join('\n');
+    const exp = expArray.join('&#013;');
 	return exp;
 }
 
