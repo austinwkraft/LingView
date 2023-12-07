@@ -63,7 +63,7 @@ function Row({ numSlots, values, tier }) {
 	// O/P: single string that explains the gloss
 	//return 'test explanation';
 //}
-
+/*
 function glossExplanation( { morph }) {
 	// I/P: morph, the string of morphemes corresponding to a word
 	// O/P: single string that explains the gloss
@@ -82,6 +82,11 @@ function glossExplanation( { morph }) {
     // Return the explanation
     const exp = expArray.join('&#013;');
 	return exp;
+}
+*/
+
+function glossExplanation({ morph }) {
+	return glossDict["CIS"];
 }
 
 export function Sentence({ sentence }) {
