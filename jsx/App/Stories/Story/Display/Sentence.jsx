@@ -70,7 +70,7 @@ function glossExplanation( { morph }) {
     const expArray = [];
 
     // Split the string into individual morphemes
-    morphArray = morph.split('-');
+    const morphArray = morph.split('-');
 
     // For each morpheme, access the entry in glossDict and append it to the explanation
     const i = morphArray.length;
