@@ -67,10 +67,10 @@ function Row({ numSlots, values, tier }) {
 function glossExplanation( { morph }) {
 	// I/P: morph, the string of morphemes corresponding to a word
 	// O/P: single string that explains the gloss
-    const expArray = [];
+    let expArray = [];
 
     // Split the string into individual morphemes
-    const morphArray = morph.split('-');
+    let morphArray = morph.split('-');
 
     // For each morpheme, access the entry in glossDict and append it to the explanation
     const i = morphArray.length;
