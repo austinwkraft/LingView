@@ -2,6 +2,8 @@ import id from 'shortid';
 import { storySearchText, storySearchViewStoryText } from '~./jsx/App/locale/LocaleConstants.jsx';
 import { TranslatableText } from '~./jsx/App/locale/TranslatableText.jsx';
 var htmlEscape = require("html-es6cape");
+const glossDict = require('./gloss_dict.json');
+
 // Note: tier names should be escaped when used as HTML attributes (e.g. data-tier=tier_name),
 // but not when used as page text (e.g. <label>{tier_name}</label>)
 
@@ -56,10 +58,30 @@ function Row({ numSlots, values, tier }) {
 	return <tr data-tier={htmlEscape(tier)}>{output}</tr>;
 }
 
-function glossExplanation( { morph }) {
+//function glossExplanation( { morph }) {
 	// I/P: morph, the Leipzig-style gloss
 	// O/P: single string that explains the gloss
-	return 'test explanation';
+	//return 'test explanation';
+//}
+
+function glossExplanation( { morph }) {
+	// I/P: morph, the string of morphemes corresponding to a word
+	// O/P: single string that explains the gloss
+    const expArray = [];
+
+    // Split the string into individual morphemes
+    morphArray = morph.split('-');
+
+    // For each morpheme, access the entry in glossDict and append it to the explanation
+    const i = morphArray.length;
+    for(let j = 0; j < i; j++) {
+        if (glossDict.hasOwnProperty(morphArray[j])) {
+            expArray.push(morphArray[j]);
+        }
+    }
+    // Return the explanation
+    const exp = expArray.join('\n');
+	return exp;
 }
 
 export function Sentence({ sentence }) {
