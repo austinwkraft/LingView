@@ -42,7 +42,7 @@ function Row({ numSlots, values, tier }) {
 		// Create element with correct 'colSpan' width:
 		const size = String(endSlot - startSlot);
 		if (tier == 'morpheme gloss'){ // Only add glossing explanation on the tier corresponding to the morpheme gloss
-			const explain = glossExplanation(text);
+			const explain = text;
 			output.push(<td key={id.generate()} colSpan={size} title={explain}>{text}</td>);
 		}
 		else {
