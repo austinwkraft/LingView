@@ -43,7 +43,7 @@ function Row({ numSlots, values, tier }) {
 		const size = String(endSlot - startSlot);
 		if (tier == 'morpheme gloss'){ // Only add glossing explanation on the tier corresponding to the morpheme gloss
 			const explain = glossExplanation(text);
-			output.push(<td key={id.generate()} colSpan={size} title={text}>{text}</td>);
+			output.push(<td key={id.generate()} colSpan={size} title={explain}>{text}</td>);
 		}
 		else {
 			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
@@ -86,7 +86,7 @@ function glossExplanation( { morph }) {
 */
 
 function glossExplanation({ morph }) {
-	return glossDict["CIS"];
+	return morph;
 }
 
 export function Sentence({ sentence }) {
