@@ -55,7 +55,8 @@ function Row({ numSlots, values, tier }) {
             				expArray.push(glossDict[morphArray[j]]);
         			}
     			}
-    			const exp = expArray.join("\n");
+			expArray.push("Visit the Glossary page for more information.");
+    			const exp = expArray.join("\n\n");
 			output.push(<td key={id.generate()} colSpan={size} title={exp}>{text}</td>);
 		}
 		else {
