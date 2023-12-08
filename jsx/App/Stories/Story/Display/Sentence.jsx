@@ -43,8 +43,20 @@ function Row({ numSlots, values, tier }) {
 		const size = String(endSlot - startSlot);
 		if (tier == 'morpheme gloss'){ // Only add glossing explanation on the tier corresponding to the morpheme gloss
 			const word = String(text);
-			//const explain = glossExplanation(word);
-			output.push(<td key={id.generate()} colSpan={size} title={word}>{text}</td>);
+			//let expArray = [];
+			// Split the string into individual morphemes
+    			//let morphArray = word.split('-');
+			const first = word.split('-')[0];
+
+   			// For each morpheme, access the entry in glossDict and append it to the explanation
+    			//const i = morphArray.length;
+    			//for(let j = 0; j < i; j++) {
+        		//	if (glossDict.hasOwnProperty(morphArray[j])) {
+            		//		expArray.push(morphArray[j]);
+        		//	}
+    			//}
+    			//const exp = expArray.join('&#013;');
+			output.push(<td key={id.generate()} colSpan={size} title={first}>{text}</td>);
 		}
 		else {
 			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
