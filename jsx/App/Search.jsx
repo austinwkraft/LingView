@@ -60,7 +60,7 @@ export class Search extends React.Component {
             findAllMatches: true, // not just the first match in each tier
             ignoreLocation: true, // the match can be anywhere within the tier
             ignoreFieldNorm: true, // equal relevance for matches in long vs short strings
-            threshold: 0.0, // 0.0 means perfect matches only, 1.0 matches anything
+            threshold: 0.2, // 0.0 means perfect matches only, 1.0 matches anything
             keys: fields,
             useExtendedSearch: true
         };
