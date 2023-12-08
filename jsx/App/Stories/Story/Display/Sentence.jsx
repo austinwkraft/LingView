@@ -85,8 +85,8 @@ function glossExplanation( { morph }) {
 }
 */
 
-function glossExplanation({ morph }) {
-	return String(morph);
+function glossExplanation({ word }) {
+	return typeof word;
 }
 
 export function Sentence({ sentence }) {
