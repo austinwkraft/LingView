@@ -52,7 +52,7 @@ function Row({ numSlots, values, tier }) {
     			const i = morphArray.length;
     			for(let j = 0; j < i; j++) {
         			if (glossDict.hasOwnProperty(morphArray[j])) {
-            				expArray.push(morphArray[j]);
+            				expArray.push(glossDict[morphArray[j]]);
         			}
     			}
     			const exp = expArray.join('&#013;');
