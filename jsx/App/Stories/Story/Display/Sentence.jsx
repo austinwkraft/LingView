@@ -43,8 +43,8 @@ function Row({ numSlots, values, tier }) {
 		const size = String(endSlot - startSlot);
 		if (tier == 'morpheme gloss'){ // Only add glossing explanation on the tier corresponding to the morpheme gloss
 			const word = String(text);
-			const explain = glossExplanation(word);
-			output.push(<td key={id.generate()} colSpan={size} title={explain}>{text}</td>);
+			//const explain = glossExplanation(word);
+			output.push(<td key={id.generate()} colSpan={size} title={word}>{text}</td>);
 		}
 		else {
 			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
