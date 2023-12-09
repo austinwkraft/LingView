@@ -47,7 +47,7 @@ export class Search extends React.Component {
             }, threshhold);
         };
     }
-    /*
+    
     build_fuse() {
         let fields = [];
         document.getElementsByName("fields").forEach(function (e) {
@@ -60,7 +60,7 @@ export class Search extends React.Component {
             findAllMatches: true, // not just the first match in each tier
             ignoreLocation: true, // the match can be anywhere within the tier
             ignoreFieldNorm: true, // equal relevance for matches in long vs short strings
-            threshold: 0.2, // 0.0 means perfect matches only, 1.0 matches anything
+            threshold: 0.0, // 0.0 means perfect matches only, 1.0 matches anything
             keys: fields,
             useExtendedSearch: true
         };
@@ -84,35 +84,6 @@ export class Search extends React.Component {
             } else {
                 let component = (<SearchSentence sentence={searchResult[i].item} false />);
                 searchResults.push(component);
-            }
-        }
-        this.setState({ "searchResults": searchResults });
-    }
-    */
-
-    gen_fields() {
-        let fields = [];
-        document.getElementsByName("fields").forEach(function (e) {
-            if (e.checked) fields.push(decode(`dependents.${e.id}.value`));
-        });
-    }
-    
-    regex_search() {
-        let input = document.getElementById("searchInput");
-        if (input) {
-            let query = JSON.parse(input.value);
-            const regex = new RegExp(query);
-        } else {
-            return;
-        }
-        let searchResults = [];
-        let fields = this.gen_fields();
-        for (let field of fields) {
-            for (let entry in sentences[field]["value"]) {
-                if (regex.test(entry)) {
-                    let component = (<SearchSentence sentence={entry.item} true />);
-                    searchResults.push(component);
-                }
             }
         }
         this.setState({ "searchResults": searchResults });
