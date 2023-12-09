@@ -18,7 +18,7 @@ export class Search extends React.Component {
             searchIndex: null, 
             displayedSearchResultsIndex: 0
          };
-        this.runSearch = this.throttle(this.regex_search, 300, this);
+        this.runSearch = this.throttle(this.search, 300, this);
         this.goToNextSearchPage = this.goToNextSearchPage.bind(this);
         this.goToPrevSearchPage = this.goToPrevSearchPage.bind(this);
     }
@@ -98,7 +98,7 @@ export class Search extends React.Component {
         let tiers = this.state.searchIndex['tier IDs'];
         tiers.forEach((tier) => {
             checkboxes.push(
-                <input id={htmlEscape(tier)} name="fields" type="checkbox" onChange={this.regex_search.bind(this)}
+                <input id={htmlEscape(tier)} name="fields" type="checkbox" onChange={this.search.bind(this)}
                 defaultChecked />
             );
             checkboxes.push(<label>{tier}</label>);
