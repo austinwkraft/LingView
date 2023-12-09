@@ -18,7 +18,7 @@ export class Search extends React.Component {
             searchIndex: null, 
             displayedSearchResultsIndex: 0
          };
-        this.runSearch = this.throttle(this.search, 300, this);
+        this.runSearch = this.throttle(this.regex_search, 300, this);
         this.goToNextSearchPage = this.goToNextSearchPage.bind(this);
         this.goToPrevSearchPage = this.goToPrevSearchPage.bind(this);
     }
@@ -47,7 +47,7 @@ export class Search extends React.Component {
             }, threshhold);
         };
     }
-
+    /*
     build_fuse() {
         let fields = [];
         document.getElementsByName("fields").forEach(function (e) {
@@ -88,7 +88,36 @@ export class Search extends React.Component {
         }
         this.setState({ "searchResults": searchResults });
     }
+    */
 
+    gen_fields() {
+        let fields = [];
+        document.getElementsByName("fields").forEach(function (e) {
+            if (e.checked) fields.push(decode(`dependents.${e.id}.value`));
+        });
+    }
+    
+    regex_search() {
+        let input = document.getElementById("searchInput");
+        if (input) {
+            let query = JSON.parse(input.value);
+            const regex = new RegExp(query);
+        } else {
+            return;
+        }
+        let searchResults = [];
+        let fields = this.gen_fields();
+        for (let field of fields) {
+            for (let entry in sentences[field]["value"]) {
+                if (regex.test(entry)) {
+                    let component = (<SearchSentence sentence={entry.item} true />);
+                    searchResults.push(component);
+                }
+            }
+        }
+        this.setState({ "searchResults": searchResults });
+    }
+    
     handleInputChange() {
         this.runSearch(false);
     }
@@ -98,7 +127,7 @@ export class Search extends React.Component {
         let tiers = this.state.searchIndex['tier IDs'];
         tiers.forEach((tier) => {
             checkboxes.push(
-                <input id={htmlEscape(tier)} name="fields" type="checkbox" onChange={this.search.bind(this)}
+                <input id={htmlEscape(tier)} name="fields" type="checkbox" onChange={this.regex_search.bind(this)}
                 defaultChecked />
             );
             checkboxes.push(<label>{tier}</label>);
