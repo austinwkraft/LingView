@@ -72,33 +72,6 @@ function Row({ numSlots, values, tier }) {
 	return <tr data-tier={htmlEscape(tier)}>{output}</tr>;
 }
 
-//function glossExplanation( { morph }) {
-	// I/P: morph, the Leipzig-style gloss
-	// O/P: single string that explains the gloss
-	//return 'test explanation';
-//}
-/*
-function glossExplanation( { morph }) {
-	// I/P: morph, the string of morphemes corresponding to a word
-	// O/P: single string that explains the gloss
-    let expArray = [];
-
-    // Split the string into individual morphemes
-    let morphArray = morph.split('-');
-
-    // For each morpheme, access the entry in glossDict and append it to the explanation
-    const i = morphArray.length;
-    for(let j = 0; j < i; j++) {
-        if (glossDict.hasOwnProperty(morphArray[j])) {
-            expArray.push(morphArray[j]);
-        }
-    }
-    // Return the explanation
-    const exp = expArray.join('&#013;');
-	return exp;
-}
-*/
-
 function glossExplanation({ word }) {
 	return typeof word;
 }
