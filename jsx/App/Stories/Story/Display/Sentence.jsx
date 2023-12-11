@@ -55,9 +55,14 @@ function Row({ numSlots, values, tier }) {
             				expArray.push(glossDict[morphArray[j]]);
         			}
     			}
-			expArray.push("Visit the Glossary page for more information.");
-    			const exp = expArray.join("\n\n");
-			output.push(<td key={id.generate()} colSpan={size} title={exp}>{text}</td>);
+			if (expArray.length > 0){
+				expArray.push("Visit the Glossary page for more information.");
+    				const exp = expArray.join("\n\n");
+				output.push(<td key={id.generate()} colSpan={size} title={exp}>{text}</td>);
+			}
+			else {
+				output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
+			}
 		}
 		else {
 			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
@@ -70,10 +75,6 @@ function Row({ numSlots, values, tier }) {
 		output.push(<td key={id.generate()} colSpan={diff} />);
 	}
 	return <tr data-tier={htmlEscape(tier)}>{output}</tr>;
-}
-
-function glossExplanation({ word }) {
-	return typeof word;
 }
 
 export function Sentence({ sentence }) {
