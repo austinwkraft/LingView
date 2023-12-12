@@ -11,7 +11,7 @@ const glossaryPageJSX = {
             <li><b>CIS</b> - Cislocative: The cislocative indicates direction towards a point of reference with verbs that involve motion in a certain direction.</li>
             <li><b>COIN</b> - Coincident: The coincident is used to indicate simultaneous occurrence (i.e., event takes place at the same time as another event) in contexts in which the focus is on the time of the action.</li>
             <li><b>CONTR</b> - Contrastive: The contrastive indicates difference/contrast, and it is often used to express negation. The contrastive prefix is used in place of the negative one in the presence of an Optative, Factual, Future, or Duplicative prefix.</li>
-            <li><b>DUP</b> - Duplicative: The duplicative conveys the basic meaning of two. While the usage of the duplicative is especially clear in verbs that involve numbers or quantity, the duplicative is also used with verbs that involve two objects (e.g. body parts that come in pairs), a change in position or location, or a change of state.</li>
+            <li><b>DUP</b> - Duplicative: The duplicative conveys the basic meaning of two. While the usage of the duplicative is especially clear in verbs that involve numbers or quantity, the duplicative is also used with verbs that involve two objects (e.g., body parts that come in pairs), a change in position or location, or a change of state.</li>
             <li><b>FACT</b> - Factual: The factual is a modal prefix that is used to refer to an action or event that is completed, and thus can be considered an established fact (e.g., <i>he left</i>).</li>
             <li><b>FUT</b> - Future: The future is a modal prefix that is used to refer to an action or event that has not taken place yet but will take place sometime in the future (e.g., <i>he will leave</i>).</li>
             <li><b>ITER</b> - Iterative: The iterative expresses the repetition of an action or event observable on one single occasion.</li> 
@@ -22,10 +22,10 @@ const glossaryPageJSX = {
       </ul>
       <h2>Aspectual suffixes</h2>
       <ul style={{ listStyleType: 'disc' }}>
-            <li><b>HAB</b> - Habitual: The habitual aspect is used to express an ongoing or continuous action, as well as recurring events or actions (e.g. <i>I hunt</i>).</li>
+            <li><b>HAB</b> - Habitual: The habitual aspect is used to express an ongoing or continuous action, as well as recurring events or actions (e.g., <i>I hunt</i>).</li>
             <li><b>FOR.PST</b> - Former past: The former past is used to describe an action or event that occurred regularly in the past but has stopped occurring (e.g., <i>I used to hunt</i>).</li>
             <li><b>PUNC</b> - Punctual: The punctual aspect describes an action that is a completed event. By describing events as complete events, the punctual aspect focuses more on the conclusion of an action or event rather than its progression.</li>
-            <li><b>STAT</b> - Stative: The stative aspect describes states. The state may be an inherent condition (e.g., <i>He is tall</i>) or it may be the result of an earlier action (e.g.. <i>I have cooked it</i>).</li>
+            <li><b>STAT</b> - Stative: The stative aspect describes states. The state may be an inherent condition (e.g., <i>He is tall</i>) or it may be the result of an earlier action (e.g., <i>I have cooked it</i>).</li>
         </ul>
         <h2>Derivational affixes</h2>
         <ul style = {{ listStyleType: 'disc'}}>
@@ -68,7 +68,7 @@ const glossaryPageJSX = {
             <li><b>A</b> - Agent: Prefixes with this marking may also be described as subjective pronouns. It often indicates the "doer" of an action.</li>
             <li><b>P</b> - Patient: Prefixes with this marking may also be described as objective pronouns. It often indicates an "undergoer" of an action.</li>
             <li><b>EX</b> - Exclusive: In pronominal prefixes, this marking excludes the addressee (i.e., <i>others and I, not including you</i>).</li>
-            <li><b>IN</b> - Inclusive: In pronominal prefixes, this marking includes the addressee (e.g. <i>we, others and I, including you</i>).</li>
+            <li><b>IN</b> - Inclusive: In pronominal prefixes, this marking includes the addressee (e.g., <i>we, others and I, including you</i>).</li>
             <li><b>SG</b> - Singular: This marking refers to one person.</li>
             <li><b>DU</b> - Dual: This marking refers to two people.</li>
             <li><b>PL</b> - Plural: This marking refers to more than two people.</li>
