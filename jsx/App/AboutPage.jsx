@@ -19,11 +19,11 @@ const aboutPageJSX = {
     <h2>References and additional resources</h2>
     <ul>
         <li>DeCaire, Oheróhskon Ryan. 2023. The role of adult immersion in Kanien'kéha revitalization. Doctoral dissertation, University of Hawai'i at Hilo.</li>
-        <li>Kawennón:nis. Onkwawenna Kentyohkwa. 2023. <a href='https://test.kawennonnis.ca/#/wordmaker'>"https://test.kawennonnis.ca/#/wordmaker"</a>.</li>
+        <li>Kawennón:nis. Onkwawenna Kentyohkwa. 2023. <a href='https://test.kawennonnis.ca/#/wordmaker'>https://test.kawennonnis.ca/#/wordmaker</a>.</li>
         <li>Lazore, Dorothy. 1993. The Mohawk language standardisation project: Conference report. Technical report. Literacy Ontario.</li>
         <li>Martin, Akwiratékha'. 2023. Tekawennahsonterónnion: Kanien'kéha morphology. Kahnawà:ke: Kanien'kehá:ka Onkwawén:na Raotitióhkwa Onkwawén:na Ionkwaio'ténion. </li>
         <li>Michelson, Karin. 1988. <i>A comparative study of Lake Iroquoian Accent</i>. Dordrecht: Kluwer Academic Publishers.</li>
-        <li>Sharing Our Stories. Ionkwaká:raton. 2023. <a href = 'https://www.sharing-our-stories.com/'>"https://www.sharing-our-stories.com/"</a>.</li>
+        <li>Sharing Our Stories. Ionkwaká:raton. 2023. <a href = 'https://www.sharing-our-stories.com/'>https://www.sharing-our-stories.com/</a>.</li>
     </ul>
     </div>,
   [KANIENKEHA]:
