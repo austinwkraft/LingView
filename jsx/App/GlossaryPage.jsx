@@ -72,7 +72,7 @@ const glossaryPageJSX = {
             <li><b>SG</b> - Singular: This marking refers to one person.</li>
             <li><b>DU</b> - Dual: This marking refers to two people.</li>
             <li><b>PL</b> - Plural: This marking refers to more than two people.</li>
-            <li>&gt<b></b> - This symbol is used in a transitive prefix, indicating that the verb accepts one or more objects (e.g., MPL &gt MSG: third-person male plural to third-person male singular transitive prefix, as in <i>they to him</i>).</li>
+            <li>{'>'}<b></b> - This symbol is used in a transitive prefix, indicating that the verb accepts one or more objects (e.g., MPL {'>'} MSG: third-person male plural to third-person male singular transitive prefix, as in <i>they to him</i>).</li>
         </ul>
         <h2>References</h2>
         <ul>
