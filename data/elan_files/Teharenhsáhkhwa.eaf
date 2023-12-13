@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ANNOTATION_DOCUMENT AUTHOR="" DATE="2023-12-13T15:58:35-05:00"
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2023-12-13T17:16:23-05:00"
     FORMAT="3.0" VERSION="3.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv3.0.xsd">
     <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
@@ -16,7 +16,7 @@
             MEDIA_URL="file:///Users/austinkraft/Desktop/Ver. 1 Video.mp4"
             MIME_TYPE="video/mp4" RELATIVE_MEDIA_URL="../../../Desktop/Ver. 1 Video.mp4"/>
         <PROPERTY NAME="URN">urn:nl-mpi-tools-elan-eaf:8aa60778-6077-4053-8f18-02b6c87671fc</PROPERTY>
-        <PROPERTY NAME="lastUsedAnnotationId">1929</PROPERTY>
+        <PROPERTY NAME="lastUsedAnnotationId">1931</PROPERTY>
     </HEADER>
     <TIME_ORDER>
         <TIME_SLOT TIME_SLOT_ID="ts1" TIME_VALUE="380"/>
@@ -5662,7 +5662,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a917" ANNOTATION_REF="a476">
-                <ANNOTATION_VALUE>And</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>and</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5677,7 +5677,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a920" ANNOTATION_REF="a479">
-                <ANNOTATION_VALUE>And</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>and</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5707,7 +5707,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a926" ANNOTATION_REF="a485">
-                <ANNOTATION_VALUE>And</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>and</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5757,7 +5757,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a936" ANNOTATION_REF="a495">
-                <ANNOTATION_VALUE>Well</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>well</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5827,7 +5827,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a950" ANNOTATION_REF="a509">
-                <ANNOTATION_VALUE>And then</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>and then</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5987,7 +5987,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a982" ANNOTATION_REF="a541">
-                <ANNOTATION_VALUE>Still</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>still</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -6057,7 +6057,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a996" ANNOTATION_REF="a555">
-                <ANNOTATION_VALUE>All of a sudden, he the male</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>all of a sudden, he the male</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -6112,7 +6112,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1007" ANNOTATION_REF="a566">
-                <ANNOTATION_VALUE>He submerged himself</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>he submerged himself</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -6297,7 +6297,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1044" ANNOTATION_REF="a603">
-                <ANNOTATION_VALUE>Niagera</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>Niagara</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -6855,7 +6855,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1155" ANNOTATION_REF="a281">
-                <ANNOTATION_VALUE>Oh</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>oh</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -7065,7 +7065,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1197" ANNOTATION_REF="a323">
-                <ANNOTATION_VALUE>Te-ha-renhs-ahkhw-ha</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>te-ha-renhs-ahkhw-ha</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -7196,6 +7196,11 @@
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1223" ANNOTATION_REF="a350">
                 <ANNOTATION_VALUE>khna</ANNOTATION_VALUE>
+            </REF_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <REF_ANNOTATION ANNOTATION_ID="a1930" ANNOTATION_REF="a351">
+                <ANNOTATION_VALUE>te-ha-renhs-ahkhw-ha</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -7640,7 +7645,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1312" ANNOTATION_REF="a442">
-                <ANNOTATION_VALUE>Te-ha-renhs-ahkhw-ha</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>te-ha-renhs-ahkhw-ha</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -9324,6 +9329,11 @@
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1648" ANNOTATION_REF="a350">
                 <ANNOTATION_VALUE>whereas</ANNOTATION_VALUE>
+            </REF_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <REF_ANNOTATION ANNOTATION_ID="a1931" ANNOTATION_REF="a351">
+                <ANNOTATION_VALUE>DUP-MSG.A-moss-pick.up-HAB</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
