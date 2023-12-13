@@ -7,7 +7,7 @@ const landingPageJSX = {
     <div>
       <p>Welcome! Click <a href='#/index'>"Index of Texts"</a> to see texts.</p>
       <p>A preliminary version of the site is available in Kanien'kéha. The site language controls are in the footer at the bottom of the window.</p>
-      <p>This website is the in-progress final project for LING 415/610 at McGill University, Fall 2023. The site is powered by <a href='https://github.com/BrownCLPS/LingView/' target="_blank" rel="noopener noreferrer">Lingview</a>.</p>
+      <p>This website is a final project for LING 415/610 at McGill University, Fall 2023. The site is powered by <a href='https://github.com/BrownCLPS/LingView/' target="_blank" rel="noopener noreferrer">Lingview</a>.</p>
     </div>,
   [KANIENKEHA]:
     <div>
