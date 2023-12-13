@@ -6,6 +6,7 @@ const glossaryPageJSX = {
   [ENGLISH] :
     <div>
       <p><i>Disclaimer; </i>We have done our best to gloss this story as accurately as possible, but it is entirely possible that we have made some mistakes along the way. We welcome and invite anyone to share their insights in places they feel are inaccurate or could use more information. If more stories and glosses are added to this website, we encourage the updating of this glossary page.</p>
+      <p>To see examples of these terms, you can use the <a href = 'https://austinwkraft.github.io/LingView/#/search'>search function</a> and specify the morpheme gloss line.</p>
       <h2>Pre-pronominal prefixes</h2>
       <ul style={{ listStyleType: 'disc' }}>
             <li><b>CIS</b> - Cislocative: The cislocative indicates direction towards a point of reference with verbs that involve motion in a certain direction.</li>
@@ -79,7 +80,7 @@ const glossaryPageJSX = {
           <li>DeCaire, Ryan. 2016. Kanien'kéha verb forms. Class materials, University of Toronto.</li>
           <li>DeCaire, Oherohskon Ryan. 2023. The role of adult immersion in Kanien'kéha revitalization. Doctoral Dissertation, University of Hawa'i at Hilo.</li> 
           <li>Kanatawakhon, David. 2009. Particles and particle phrases. Centre for Research and Teach of Canadian Native Languages.</li>
-          <li>Native languages a support document for the teaching of language patterns: Oneida, Cayuga, and Mohawk. 2011. Ontario Ministry of Education. </li>
+          <li>Michelson, Karin, and Catherine Price. 2011. Oneida, Cayuga, and Mohawk. Native Languages: A Support Document for the Teaching of Language Patterns. Ontario Ministry of Education.</li>
         </ul>
     </div>
     ,
