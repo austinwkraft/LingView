@@ -47,6 +47,7 @@
     "1IN.DU.A":"1IN.DU.A - First-person inclusive dual agent.",
     "FZ.DU.A":"FZ.DU.A - Third-person feminine-zoic dual agent.",
     "FZ.PL.A":"FZ.PL.A - Third-person feminine-zoic plural agent.",
+    "MPL.A""MPL.A - Third-person masculine plural agent.",
     "MPL>1SG":"MPL>1SG - Third-person masculine plural to first-person singular transitive prefix.",
     "1SG>2PL":"1SG>2PL - First-person singular to second-person plural transitive prefix.",
     "1SG>2SG":"1SG>2SG - First-person singular to second-person singular transitive prefix.",
@@ -57,5 +58,5 @@
     "1SG>2DU":"1SG>2DU - First-person singular to second-person dual transitive prefix.",
     "2SG>MPL":"2SG>MPL - Second-person singular to third-person masculine plural prefix.",
     "2PL>MPL":"2PL>MPL - Second-person plural to third-person masculine plural prefix.",
-    "1SG>MPL":"1SG>MPL - First-person singular to third-person masculine plural prefix."
+    "1SG>MPL":"1SG>MPL - First-person singular to third-person masculine plural prefix.",
 }

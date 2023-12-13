@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ANNOTATION_DOCUMENT AUTHOR="" DATE="2023-12-12T20:25:11-05:00"
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2023-12-13T15:58:35-05:00"
     FORMAT="3.0" VERSION="3.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv3.0.xsd">
     <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
@@ -1521,7 +1521,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a174" ANNOTATION_REF="a74">
-                <ANNOTATION_VALUE>ALl of a sudden, his older brother looked out and Teharenhsáhkhwa dove under water.</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>All of a sudden, his older brother looked out and Teharenhsáhkhwa dove under water.</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -4492,7 +4492,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a683" ANNOTATION_REF="a239">
-                <ANNOTATION_VALUE>And</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>and</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5557,7 +5557,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a896" ANNOTATION_REF="a455">
-                <ANNOTATION_VALUE>Very</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>very</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5777,7 +5777,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a940" ANNOTATION_REF="a499">
-                <ANNOTATION_VALUE>So</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>so</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5797,7 +5797,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a944" ANNOTATION_REF="a503">
-                <ANNOTATION_VALUE>Almost</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>almost</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -5887,7 +5887,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a962" ANNOTATION_REF="a521">
-                <ANNOTATION_VALUE>And then</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>and then</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -6112,7 +6112,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1007" ANNOTATION_REF="a566">
-                <ANNOTATION_VALUE>He submered himself</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>He submerged himself</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -6192,7 +6192,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1023" ANNOTATION_REF="a582">
-                <ANNOTATION_VALUE>Not</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>not</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -8623,7 +8623,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1508" ANNOTATION_REF="a202">
-                <ANNOTATION_VALUE>M.PL&gt;1SG-call-HAB</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>MPL&gt;1SG-call-HAB</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -10463,7 +10463,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1876" ANNOTATION_REF="a581">
-                <ANNOTATION_VALUE>FUT-1SG&gt;2SG-work-NMZL-give-PUNC</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>FUT-1SG&gt;2SG-work-NMLZ-give-PUNC</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -10478,7 +10478,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <REF_ANNOTATION ANNOTATION_ID="a1879" ANNOTATION_REF="a584">
-                <ANNOTATION_VALUE>NEG-N.A-work-NMZL-big[STAT]</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>NEG-N.A-work-NMLZ-big[STAT]</ANNOTATION_VALUE>
             </REF_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
