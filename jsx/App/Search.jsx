@@ -125,7 +125,7 @@ export class Search extends React.Component {
         return (
             <div id="searchForm">
                 <label for="searchInput"><TranslatableText dictionary={searchPagePromptText} /></label> <input id="searchInput" onChange={this.handleInputChange.bind(this)} type="text" />
-                <p>To search for forms containing two specific elements, separate the elements with a space. For example, 'FACT PUNC' will return all utterances containing a word with both FACT and PUNC. To search for forms containing one element or another, separate the elements with the pipe symbol |. For example, 'FACT|HAB' will return al utterances containing either FACT or HAB.</p>
+                <p>To search for forms containing two specific elements, separate the elements with a space. For example, 'FACT PUNC' will return all utterances containing a word with both FACT and PUNC. To search for forms containing one element or another, separate the elements with the pipe symbol |. For example, 'FACT|HAB' will return all utterances containing either FACT or HAB.</p>
                 <br />
                 {this.genCheckboxes()}
                 <br />
