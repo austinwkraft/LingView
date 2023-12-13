@@ -20,6 +20,7 @@ export function Sidebar({ metadata }) {
 			<div id="leftPanel">
 				<Video path={path} />
 				<Title title={title} />
+				<p>In the case of long utterances, it might be necessary to zoom out the browser window.</p>
 				<Minibar metadata={metadata} hasVideo />
 			</div>
 		);
@@ -27,6 +28,7 @@ export function Sidebar({ metadata }) {
 		return (
 			<div id="leftPanel">
 				<Title title={title} />
+				<p>In the case of long utterances, it might be necessary to zoom out the browser window.</p>
 				<Minibar metadata={metadata} hasVideo={false} />
 			</div>
 		);
