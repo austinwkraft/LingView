@@ -51,7 +51,7 @@ const glossaryPageJSX = {
         <h2>Unanalyzable particles</h2>
         <ul style={{ listStyleType: 'disc' }}>
             <li><b>NE</b> - The NE particle has many uses. It occurs wherever something is deemed specific in its reference to the main statement or focus of discussion. Its interpretation will depend upon the word, phrase, or description it precedes (Kanatawakhon, 2009).</li>
-            <li><b>SHE'S</b> - The particle SHE'S roughly translates to <i>customarily</i>, <i>habitually</i>, or <i>usually</i> in English (Karin Michelson, p.c.) while also emphasizing a past element—subsequently placing the situation in remote past.</li>
+            <li><b>SHE'S</b> - The particle SHE'S roughly translates to <i>customarily</i>, <i>habitually</i>, or <i>usually</i> in English (Karin Michelson, p.c.) while also emphasizing a past element—subsequently placing the situation in remote past (Wíshe Mitchell Mittelstaedt, p.c.).</li>
         </ul>
         <h2>Other labels</h2>
         <ul style={{ listStyleType: 'disc' }}>
