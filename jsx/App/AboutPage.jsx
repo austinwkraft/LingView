@@ -8,7 +8,7 @@ const aboutPageJSX = {
       <p>This site is a pilot adaptation of LingView by students at McGill University in collaboration with Kanienke'há:ka, for educational purposes. We thank you for your interest. </p>
       <p>The purpose of this website is to support Kanien'kéha language learners. The stories available on this website are shared with the consent of the speakers. </p>
       <p>This site is a final project for LING 415/610 at McGill University in Fall 2023. Jinny Choi, Alex Ito, Blair Jackson, Austin Kraft, and Xindi Zhang contributed.
-        The students thank Mary Onwá:ri Tekahawáhkwen McDonald, for generously contributing Kanien'kéha expertise in the course of this project and throughout LING 415/610; and Professor Jessica Coon, for leading this class and supporting this LingView pilot project.
+        The students thank Mary Onwá:ri Tekahawáhkwen McDonald and Wíshe Mitchell Mittelstaedt, for generously contributing Kanien'kéha expertise in the course of this project and throughout LING 415/610; and Professor Jessica Coon, for leading this class and supporting this LingView pilot project.
         Any errors or misrepresentations are the students' responsibility.</p>
     <h2>About Kanien'kéha</h2>
         <p>Kanien'kéha, also known by the exonym "Mohawk," is a Northern Iroquoian language spoken in modern-day Ontario, Quebec, and New York State. As of 2021, there are approximately 560 L1 speakers and 80 advanced L2 speakers (DeCaire 2023), with many more intermediate speakers.
