@@ -17,6 +17,7 @@
     "AUG":"AUG - Augmentative: The augmentative attaches to a noun to indicate that it is of a large size.",
     "BEN":"BEN - Benefactive: The benefactive is used to say that someone/something was affected by the action either positively or negatively.",
     "CAUS":"CAUS - Causative: The causative adds a participant to the event: someone who caused it to occur.",
+    "CONT":"CONT - Continuative: The continuative indicates that an action is still in progress.",
     "DIM":"DIM - Diminutive: The diminutive in Kanien'kéha is most often seen on kinship terms. This suffix will almost always be attached to the roots of the kinship terms.",
     "DIST":"DIST - Distributive: The distributive acts as a sort of pluralizer. It can indicate that an action happens many times or that there are multiple participants.",
     "INCH":"INCH - Inchoative: The inchoative is used with stative verbs, and it describes the idea of becoming.",
@@ -30,6 +31,7 @@
     "JR":"JR - Joiner vowel: This marking refers to a vowel that gets inserted after a verb or noun root that ends in a consonant, and before another consonant.",
     "NE":"NE: The NE particle has many uses. It occurs wherever something is deemed specific in its reference to the main statement or focus of discussion.",
     "SHE'S":"SHE'S: The particle SHE'S roughly translates to 'usually' in English (Karin Michelson, p.c.) while also emphasizing a past element—subsequently placing the situation in remote past.",
+    "ASSERT":"ASSERT: An assertional particle is used to show that the speaker believes what they say to be true.",
     "EMPH":"EMPH - Emphatic: The emphatic particle is used to indicate emphasis.",
     "EXCL":"EXCL - Exclamation: An exclamation is an utterance made to indicate strong emotion or show emphasis.",
     "Q":"Q - Question: This particle is used to ask a question.",
@@ -58,5 +60,8 @@
     "1SG>2DU":"1SG>2DU - First-person singular to second-person dual transitive prefix.",
     "2SG>MPL":"2SG>MPL - Second-person singular to third-person masculine plural prefix.",
     "2PL>MPL":"2PL>MPL - Second-person plural to third-person masculine plural prefix.",
-    "1SG>MPL":"1SG>MPL - First-person singular to third-person masculine plural prefix."
+    "1SG>MPL":"1SG>MPL - First-person singular to third-person masculine plural prefix.",
+    "2SG>3PL":"2SG>3PL - Second-person singular to third-person plural prefix.",
+    "2PL>3PL":"2PL>3PL - Second-person plural to third-person plural prefix.",
+    "1SG>3PL":"1SG>3PL - First-person singular to third-person plural prefix."
 }
