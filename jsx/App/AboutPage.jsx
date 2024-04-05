@@ -24,6 +24,8 @@ const aboutPageJSX = {
         <li>Michelson, Karin. 1988. <i>A comparative study of Lake Iroquoian Accent</i>. Dordrecht: Kluwer Academic Publishers.</li>
         <li>Sharing Our Stories. Ionkwaká:raton. 2023. <a href = 'https://www.sharing-our-stories.com/'>https://www.sharing-our-stories.com/</a>.</li>
     </ul>
+    <h2>Contact us</h2>
+      <p>If you have questions or suggestions about this language resource, please contact us at either mitchellbrant.m [at] gmail.com, or at austin.kraft [at] mail.mcgill.ca.</p>
     </div>,
   [KANIENKEHA]:
     <div>
