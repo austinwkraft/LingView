@@ -33,6 +33,7 @@ const glossaryPageJSX = {
             <li><b>AUG</b> - Augmentative: The augmentative attaches to a noun to indicate that it is of a large size.</li>
             <li><b>BEN</b> - Benefactive: The benefactive is used to say that someone/something was affected by the action either positively or negatively (e.g., <i>He cooked for me</i>).</li>
             <li><b>CAUS</b> - Causative: The causative adds a participant to the event, someone who caused it to occur. The pronominal prefix may change to indicate a causer and/or a causee depending on the participants.</li>
+            <li><b>CONT</b> - Continuative: The continuative indicates that an action is still in progress.</li>
             <li><b>DIM</b> - Diminutive: The diminutive in Kanien'kéha is most often seen on kinship terms. This suffix will almost always be attached to the roots of the kinship terms.</li>
             <li><b>DIST</b> - Distributive: The distributive acts as a sort of pluralizer. It can indicate that an action happens many times or that there are multiple participants.</li>
             <li><b>INCH</b> - Inchoative: The inchoative is used with stative verbs, and it describes the idea of "becoming" (e.g., <i>It became hard</i>).</li>
@@ -55,7 +56,8 @@ const glossaryPageJSX = {
         </ul>
         <h2>Other labels</h2>
         <ul style={{ listStyleType: 'disc' }}>
-            <li><b>EMPH</b> - Emphatic: The emphatic particle is used to indicate emphasis.</li>
+            <li><b>ASSERT</b> - Assertion: An assertional particle is used to show that the speaker believes what they say to be true.</li>
+            <li><b>EMPH</b> - Emphatic: An emphatic particle is used to indicate emphasis.</li>
             <li><b>EXCL</b> - Exclamation: An exclamation is an utterance made to indicate strong emotion or show emphasis. Examples of exclamations in English include <i>Gah!</i> <i>Hey!</i> <i>Wow!</i> and <i>Oh!</i></li>
             <li><b>Q</b> - Question: This particle is used to ask a question.</li>
         </ul>
@@ -63,6 +65,7 @@ const glossaryPageJSX = {
         <ul style={{ listStyleType: 'disc' }}>
             <li><b>1</b> - First person: The first person refers to the speaker of the sentence.</li>
             <li><b>2</b> - Second person: The second person refers to the addressee(s) of the sentence.</li>
+            <li><b>3</b> - Third person: The third person refers to someone who is neither the speaker nor the addressee. In these glosses, the symbol 3 is used when the gender is not relevant; otherwise, the gender terms in this section of the glossary are used.</li>
             <li><b>M</b> - Masculine: This marking refers to one or more animate males. If a group of people includes men and women, the M along with either Dual or Plural would express 'they/them.'</li>
             <li><b>FI</b> - Feminine-indefinite: This marking refers to an animate female. It cannot be used with plural marking.</li>
             <li><b>N</b> - Neuter: This marking refers to non-animate participants. The prefix roughly translates to 'it.'</li>
