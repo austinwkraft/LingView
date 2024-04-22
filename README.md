@@ -1,4 +1,7 @@
 # LingView 
+
+This is an extension of the LingView project developed at Brown University ([Pride, Tomlin and AnderBois 2020](http://hdl.handle.net/10125/24916)), as a way to display Kanien'kéha language documentation in a more user-friendly interface.
+
 A web interface for viewing glossed ELAN and FLEx files, optionally with time-synced video and audio. Developed at Brown University as part of the A'ingae Language Documentation initiative. The standard version of LingView is [BrownCLPS/LingView](https://github.com/BrownCLPS/LingView).
 
 Front-end code written with [ReactJS](https://reactjs.org/). 
