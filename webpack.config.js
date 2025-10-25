@@ -4,9 +4,11 @@ const webpack = require('webpack');
 module.exports = {
   entry: './jsx/AppContainer.jsx',
   output: {
+    hashFunction:"sha256",
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
     publicPath: './build/'
+    
   },
   mode: 'production',
   module: {
@@ -14,7 +16,7 @@ module.exports = {
       test: /\.jsx$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      query: {
+      options: {
         presets: ['es2015', 'react'],
         plugins: ['syntax-dynamic-import']
       }
