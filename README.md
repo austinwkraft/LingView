@@ -51,7 +51,7 @@ The first time you use the site, and after each time you make changes, you'll ne
 9. Continue to customize the files according to your project and interests. In getting started, visit “jsx” > “App”. In this subdirectory, you can edit the included JavaScript files to, for instance, update the content of the “About” page. Second, you can change colours and other display settings in the “css” subdirectory, in the “main.css” file. 
 
 ## Resources
-For an overview of the software, its potential uses, and the circumstances and design principles of its creation, see the original paper [paper](http://hdl.handle.net/10125/24916).
+For an overview of the software, its potential uses, and the circumstances and design principles of its creation, see the original [paper](http://hdl.handle.net/10125/24916).
 
 For how-to's and troubleshooting, check their [wiki](https://github.com/BrownCLPS/LingView/wiki). 
 
