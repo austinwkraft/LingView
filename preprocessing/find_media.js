@@ -55,7 +55,7 @@ function verifyMedia(filename) {
     return (media_files.indexOf(filename) >= 0);
   } else if (filename.slice(4) === "http") {
     // Else if the "filename" as stored in the metadata is actually an URL.
-    // Return true in this case, assuming the URL is a valid from Youtube.
+    // Return true in this case, assuming the URL is valid.
     return true; 
   }
   return false; 
@@ -165,7 +165,7 @@ function updateMediaMetadata(filename, storyID, metadata, linkedMediaPaths) {
     metadata['media']['video'] = "";
   } else {
     // If the video file has ".videourl" extension,
-    // change the content of the 'video' tag to the actual Youtube URL.
+    // change the content of the 'video' tag to the actual URL.
     if (isVideoFilepathVideoURLExtension(videoFile)) {
       const videoFileContent = fs.readFileSync("./data/media_files/" + videoFile, 'utf8');
       metadata['media']['video'] = videoFileContent;
@@ -202,7 +202,7 @@ function updateMediaMetadata(filename, storyID, metadata, linkedMediaPaths) {
       hasWorkingVideo = true;
       metadata['media']['video'] = videoFile;
       // If the video file has ".videourl" extension,
-      // change the content of the 'video' tag to the actual Youtube URL.
+      // change the content of the 'video' tag to the actual URL.
       if (isVideoFilepathVideoURLExtension(videoFile)) {
         const videoFileContent = fs.readFileSync("./data/media_files/" + videoFile, 'utf8');
         metadata['media']['video'] = videoFileContent;
