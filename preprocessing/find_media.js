@@ -55,7 +55,7 @@ function verifyMedia(filename) {
     return (media_files.indexOf(filename) >= 0);
   } else if (filename.slice(4) === "http") {
     // Else if the "filename" as stored in the metadata is actually an URL.
-    // Return true in this case, assuming the URL is a valid from Youtube.
+    // Return true in this case, assuming the URL is valid.
     return true; 
   }
   return false; 
@@ -74,7 +74,7 @@ function findValidMedia(filenames) {
 
 // Check if a video file's path ends in the ".videourl" extension. 
 function isVideoFilepathVideoURLExtension(videoFile) {
-  return videoFile.endsWith(".videoURL");
+  return videoFile.endsWith(".videourl");
 }
 
 function mediaSearch(filename, mediaType, mediaFiles, extensions) {
@@ -107,7 +107,7 @@ function mediaSearch(filename, mediaType, mediaFiles, extensions) {
       mediaFile = remoteMedia.filename;
       if (global.missingMediaFiles) global.missingMediaFiles.push(`${remoteMedia.filename} (at ${remoteMedia.remoteUrl})`);
     } else if (process.env.MISSING_MEDIA === 'link') {
-      mediaFile = remoteMedia.remoteUrl; 
+      mediaFile = remoteMedia.remoteUrl;
     } else {
       console.warn(`Error during remote media search: Unsupported value ${process.env.MISSING_MEDIA} for MISSING_MEDIA env variable.`);
     }
