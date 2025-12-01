@@ -7,7 +7,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
     publicPath: './build/',
-	hashFunction: "sha256",
+	  hashFunction: "sha256",
   },
   mode: 'production',
   module: {
