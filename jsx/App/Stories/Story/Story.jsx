@@ -70,7 +70,7 @@ export function getMediaFilePath(mediaFilename) {
 // Check if a video filepath is a Youtube URL or an actual filepath pointing to
 // any of .mp3, .wav, or .mp4 files
 // function isVideoFilePathYoutube(mediaFilename) {
-//     const nonYoutubeExtensions = new Set(['.mp3', '.wav', '.mp4', '.videourl']);
+//     const nonYoutubeExtensions = new Set(['.mp3', '.wav', '.mp4']);
 //     if (nonYoutubeExtensions.has(mediaFilename.slice(mediaFilename.length - 4))) {
 //         return false;
 //     }

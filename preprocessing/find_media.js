@@ -74,7 +74,7 @@ function findValidMedia(filenames) {
 
 // Check if a video file's path ends in the ".videourl" extension. 
 function isVideoFilepathVideoURLExtension(videoFile) {
-  return videoFile.endsWith(".videoURL");
+  return videoFile.endsWith(".videourl");
 }
 
 function mediaSearch(filename, mediaType, mediaFiles, extensions) {
@@ -107,7 +107,7 @@ function mediaSearch(filename, mediaType, mediaFiles, extensions) {
       mediaFile = remoteMedia.filename;
       if (global.missingMediaFiles) global.missingMediaFiles.push(`${remoteMedia.filename} (at ${remoteMedia.remoteUrl})`);
     } else if (process.env.MISSING_MEDIA === 'link') {
-      mediaFile = remoteMedia.remoteUrl; 
+      mediaFile = remoteMedia.remoteUrl;
     } else {
       console.warn(`Error during remote media search: Unsupported value ${process.env.MISSING_MEDIA} for MISSING_MEDIA env variable.`);
     }
@@ -165,7 +165,7 @@ function updateMediaMetadata(filename, storyID, metadata, linkedMediaPaths) {
     metadata['media']['video'] = "";
   } else {
     // If the video file has ".videourl" extension,
-    // change the content of the 'video' tag to the actual URL.
+    // change the content of the 'video' tag to the actual Youtube URL.
     if (isVideoFilepathVideoURLExtension(videoFile)) {
       const videoFileContent = fs.readFileSync("./data/media_files/" + videoFile, 'utf8');
       metadata['media']['video'] = videoFileContent;
@@ -202,7 +202,7 @@ function updateMediaMetadata(filename, storyID, metadata, linkedMediaPaths) {
       hasWorkingVideo = true;
       metadata['media']['video'] = videoFile;
       // If the video file has ".videourl" extension,
-      // change the content of the 'video' tag to the actual URL.
+      // change the content of the 'video' tag to the actual Youtube URL.
       if (isVideoFilepathVideoURLExtension(videoFile)) {
         const videoFileContent = fs.readFileSync("./data/media_files/" + videoFile, 'utf8');
         metadata['media']['video'] = videoFileContent;
