@@ -40,13 +40,13 @@ export class Story extends React.Component {
                 footer = <div id="footer"><audio data-live="true" controls controlsList="nodownload" id="audio" src={audioFilePath}/></div>;
             } else {
                 const mediaName = media['video'];
-                if (isVideoFilePathYoutube(mediaName)) {
-                    const youtubeID = getYoutubeID(mediaName);
-                    footer = <div hidden id="footer"><audio data-live="true" is-youtube="true" controls controlsList="nodownload" id="video-youtube" youtube-id={youtubeID}/></div>;
-                } else {
-                    const videoFilePath = getMediaFilePath(mediaName);
-                    footer = <div hidden id="footer"><audio data-live="true" is-youtube="false" controls controlsList="nodownload" id="video" src={videoFilePath}/></div>;
-                }
+                // if (isVideoFilePathYoutube(mediaName)) {
+                //     const youtubeID = getYoutubeID(mediaName);
+                //     footer = <div hidden id="footer"><audio data-live="true" is-youtube="true" controls controlsList="nodownload" id="video-youtube" youtube-id={youtubeID}/></div>;
+                // } else {
+                const videoFilePath = getMediaFilePath(mediaName);
+                footer = <div hidden id="footer"><audio data-live="true" is-youtube="false" controls controlsList="nodownload" id="video" src={videoFilePath}/></div>;
+                // }
                 
             }
         }
@@ -69,20 +69,20 @@ export function getMediaFilePath(mediaFilename) {
 
 // Check if a video filepath is a Youtube URL or an actual filepath pointing to
 // any of .mp3, .wav, or .mp4 files
-function isVideoFilePathYoutube(mediaFilename) {
-    const nonYoutubeExtensions = new Set(['.mp3', '.wav', '.mp4', '.videourl']);
-    if (nonYoutubeExtensions.has(mediaFilename.slice(mediaFilename.length - 4))) {
-        return false;
-    }
-    return true;
-}
+// function isVideoFilePathYoutube(mediaFilename) {
+//     const nonYoutubeExtensions = new Set(['.mp3', '.wav', '.mp4', '.videourl']);
+//     if (nonYoutubeExtensions.has(mediaFilename.slice(mediaFilename.length - 4))) {
+//         return false;
+//     }
+//     return true;
+// }
 
-// Source: https://stackoverflow.com/questions/3452546/how-do-i-get-the-youtube-video-id-from-a-url
-function getYoutubeID(youtubeUrl) {
-    var videoID = youtubeUrl.split('v=')[1];
-    var ampersandPosition = videoID.indexOf('&');
-    if (ampersandPosition != -1) {
-        videoID = videoID.substring(0, ampersandPosition);
-    }
-    return videoID;
-}
+// // Source: https://stackoverflow.com/questions/3452546/how-do-i-get-the-youtube-video-id-from-a-url
+// function getYoutubeID(youtubeUrl) {
+//     var videoID = youtubeUrl.split('v=')[1];
+//     var ampersandPosition = videoID.indexOf('&');
+//     if (ampersandPosition != -1) {
+//         videoID = videoID.substring(0, ampersandPosition);
+//     }
+//     return videoID;
+// }
