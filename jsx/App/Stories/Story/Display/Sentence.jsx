@@ -7,6 +7,51 @@ const glossDict = require('./gloss_dict.json');
 // Note: tier names should be escaped when used as HTML attributes (e.g. data-tier=tier_name),
 // but not when used as page text (e.g. <label>{tier_name}</label>)
 
+function GlossLine({text}) {
+	// modified version of the tooltip glossing originally built into Row
+	const word = String(text);
+	let expArray = [];
+	// Split the string into individual morphemes
+	let morphArray = word.split('-');
+
+   	// For each morpheme, access the entry in glossDict and append it to the explanation
+    const i = morphArray.length;
+    for(let j = 0; j < i; j++) {
+		// We want to keep the - used to separate morphemes 
+		let wordActual = morphArray[j];
+		if (j < i-1) {wordActual = wordActual+'-'};
+		// find morphs within square brackets
+		let morphArray2 = morphArray[j].split(/[\[\]]/);
+		// if the morpheme is in the glossary, add a span element with the corresponding tooltip
+        if (glossDict.hasOwnProperty(morphArray[j])) {
+            expArray.push(<span key={id.generate()} title={glossDict[morphArray[j]]}>{wordActual}</span>);
+        }
+		// handle case where morpheme has square brackets
+		else if (morphArray2.length > 1) {
+			// check the part outside the brackets against the glossary
+			if (glossDict.hasOwnProperty(morphArray2[0])) {
+				expArray.push(<span key={id.generate()} title={glossDict[morphArray2[0]]}>{morphArray2[0]}</span>);
+			} else {
+				expArray.push(<span key={id.generate()}>{morphArray2[0]}</span>);
+			}
+			// check the part inside the brackets against the glossary
+			if (glossDict.hasOwnProperty(morphArray2[1])) {
+				expArray.push(<span key={id.generate()} title={glossDict[morphArray2[1]]}>[{morphArray2[1]}]</span>);
+			} else {
+				expArray.push(<span key={id.generate()}>[{morphArray2[1]}]</span>);
+			}
+			// add hyphen if not last morpheme
+			if (j < i-1) {
+				expArray.push(<span key={id.generate()}>-</span>);
+			}
+		}
+		else {
+			expArray.push(<span key={id.generate()}>{wordActual}</span>);
+		}
+	};
+	return expArray;
+}
+
 function Row({ numSlots, values, tier }) {
 	// I/P: numSlots, taken from parent sentence
 	//      values, list of segments (e.g., morphemes) with start/end times
@@ -41,28 +86,12 @@ function Row({ numSlots, values, tier }) {
 		}
 		// Create element with correct 'colSpan' width:
 		const size = String(endSlot - startSlot);
-		if (tier == 'morpheme gloss'){ // Only add glossing explanation on the tier corresponding to the morpheme gloss
-			const word = String(text);
-			let expArray = [];
-			// Split the string into individual morphemes
-    			let morphArray = word.split('-');
-			//const first = word.split('-')[0];
-
-   			// For each morpheme, access the entry in glossDict and append it to the explanation
-    			const i = morphArray.length;
-    			for(let j = 0; j < i; j++) {
-        			if (glossDict.hasOwnProperty(morphArray[j])) {
-            				expArray.push(glossDict[morphArray[j]]);
-        			}
-    			}
-			if (expArray.length > 0){
-				expArray.push("Visit the Glossary page for more information.");
-    				const exp = expArray.join("\n\n");
-				output.push(<td key={id.generate()} colSpan={size} title={exp}>{text}</td>);
-			}
-			else {
-				output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
-			}
+		if (tier == 'morpheme gloss'){ 
+			// Only add glossing explanation on the tier corresponding to the morpheme gloss
+			// Generate the components for the tooltips
+			let exp = <GlossLine key={id.generate()} text={text}/>
+			// add to the table data component
+			output.push(<td key={id.generate()} colSpan={size}>{exp}</td>)
 		}
 		else {
 			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
