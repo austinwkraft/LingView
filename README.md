@@ -31,13 +31,22 @@ If you chosen to download Github Desktop (which provides a user-friendly interfa
 
 3. Installing the node packages.
 
-In File Explorer or Finder, navigate to your root directory (the cloned LingView repository). Right-click (or Control-click) and select "Open in Terminal". Run the command: npm install  
+In File Explorer or Finder, navigate to your root directory (the cloned LingView repository). Right-click (or Control-click) and select "Open in Terminal". Run the command:
+```console
+npm install
+```  
 
 This will install all the node modules required by our program. 
 
 Add your own pre-existing transcription files to the appropriate data folder. Ensure that your media files share names with their associated transcription files for LingView to be able to properly link them and display them together. 
 
-The first time you use the site, and after each time you make changes, you'll need to rebuild the LingView site. To do so, type the command npm run quick-build in the repository's root directory. To view the website in your browser, open the index.html file. 
+The first time you use the site, and after each time you make changes, you'll need to rebuild the LingView site. To do so, type the command
+
+```console
+npm run quick-build
+```
+
+in the repository's root directory. To view the website in your browser, open the index.html file. 
 
 ## Setting up an online instance of LingView
 1. Sign into your GitHub account, or create a GitHub account at https://github.com/. 
