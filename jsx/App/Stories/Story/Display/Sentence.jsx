@@ -24,19 +24,19 @@ function GlossLine({text}) {
 		let morphArray2 = morphArray[j].split(/[\[\]]/);
 		// if the morpheme is in the glossary, add a span element with the corresponding tooltip
         if (glossDict.hasOwnProperty(morphArray[j])) {
-            expArray.push(<span key={id.generate()} title={glossDict[morphArray[j]]}>{wordActual}</span>);
+            expArray.push(<a class="tooltip" key={id.generate()} >{wordActual}<span>{glossDict[morphArray[j]]}</span></a>);
         }
 		// handle case where morpheme has square brackets
 		else if (morphArray2.length > 1) {
 			// check the part outside the brackets against the glossary
 			if (glossDict.hasOwnProperty(morphArray2[0])) {
-				expArray.push(<span key={id.generate()} title={glossDict[morphArray2[0]]}>{morphArray2[0]}</span>);
+				expArray.push(<a class="tooltip" key={id.generate()} >{morphArray2[0]}<span>{glossDict[morphArray2[0]]}</span></a>);
 			} else {
 				expArray.push(<span key={id.generate()}>{morphArray2[0]}</span>);
 			}
 			// check the part inside the brackets against the glossary
 			if (glossDict.hasOwnProperty(morphArray2[1])) {
-				expArray.push(<span key={id.generate()} title={glossDict[morphArray2[1]]}>[{morphArray2[1]}]</span>);
+				expArray.push(<a class="tooltip" key={id.generate()} >[{morphArray2[1]}]<span>{glossDict[morphArray2[1]]}</span></a>);
 			} else {
 				expArray.push(<span key={id.generate()}>[{morphArray2[1]}]</span>);
 			}
