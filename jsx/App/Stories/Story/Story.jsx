@@ -45,20 +45,22 @@ export class Story extends React.Component {
                 //     footer = <div hidden id="footer"><audio data-live="true" is-youtube="true" controls controlsList="nodownload" id="video-youtube" youtube-id={youtubeID}/></div>;
                 // } else {
                 const videoFilePath = getMediaFilePath(mediaName);
-                footer = <div hidden id="footer"><audio data-live="true" is-youtube="false" controls controlsList="nodownload" id="video" src={videoFilePath}/></div>;
+                // have to name it audio in the footer so that pause/play and time sync works when show video is toggled
+                footer = <div hidden id="footer"><audio data-live="true" is-youtube="false" controls controlsList="nodownload" id="audio" src={videoFilePath}/></div>;
                 // }
                 
             }
         }
 
         return (
-            //<div>
+            // outer div and null footer are needed for the sentence highlighting and show video toggle to work properly
+            <div>
                 <div id="middle">
                     <Sidebar metadata={story['metadata']}/>
                     <CenterPanel timed={timed} sentences={sentences} metadata={story['metadata']}/>
                 </div>
-                //{footer}
-            //</div>
+                {footer}
+            </div>
         );
     }
 }

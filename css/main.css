@@ -124,7 +124,6 @@ td {
 		Timed */
 
 #video {
-	width: calc(40vw - 40px); /* an attempt to avoid flickering scrollbar glitch */
     outline: none;
 }
 

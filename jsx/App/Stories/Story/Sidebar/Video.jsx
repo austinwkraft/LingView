@@ -37,6 +37,8 @@ export class Video extends React.Component {
 		$('#video').attr('data-live', 'true');
 		$('#video').attr('ontimeupdate', 'sync(this.currentTime)');
 		$('#video').attr('onclick', 'sync(this.currentTime)');
+		// Set video width to match left panel
+		$('#video').css('width', '100%');
 
 		// Match times:
 		var audio = document.getElementById('audio');
@@ -54,15 +56,15 @@ export class Video extends React.Component {
 
 	static hide() {
 		// Resize panels:
-		var extraHeight = 128; // NavBar plus footer plus audio.
+		var extraHeight = 148; // NavBar plus footer plus audio and margins.
 		var bodyHeight = 'calc(100% - ' + extraHeight.toString() + "px)";
 
 		$("#leftPanel").css("width", "300px");
 		$("#leftPanel").css("height", bodyHeight);
 		$("#centerPanel").css("height", bodyHeight);
-		// edited to account for page margins
+		// edited to account for page margins and tooltips panel
 		$("#centerPanel").css("margin-left", "340px");
-		$("#centerPanel").css("width", "calc(100% - 340px)");
+		$("#centerPanel").css("width", "calc(100% - 670px)");
 
 		// Deactivate video:
 		$("#video").css("display", "none");
