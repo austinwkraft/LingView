@@ -124,7 +124,7 @@ td {
 		Timed */
 
 #video {
-	width: 40vw; /* an attempt to avoid flickering scrollbar glitch */
+	width: calc(40vw - 40px); /* an attempt to avoid flickering scrollbar glitch */
     outline: none;
 }
 
@@ -421,7 +421,7 @@ a.tooltip {
 a.tooltip span {
 	display: none;
 	padding: 14px 20px;
-	top: 6%;
+	top: 53px;
 	right: 5px;
 	width: 240px;
 	line-height: 25px;
@@ -440,3 +440,9 @@ a.tooltip:hover span {
 	-webkit-border-radius: 10px;
 	border-radius: 10px; 
 }
+
+/*
+table, th, td{
+    border: 1px solid black;
+}
+*/

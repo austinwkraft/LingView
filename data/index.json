@@ -1,112 +1,54 @@
 {
-  "1e3bff88-29b9-4b3f-be34-bffc38624bac": {
-    "timed": false,
-    "story ID": "1e3bff88-29b9-4b3f-be34-bffc38624bac",
+  "8aa60778-6077-4053-8f18-02b6c87671fc": {
+    "timed": true,
+    "story ID": "8aa60778-6077-4053-8f18-02b6c87671fc",
     "title": {
-      "con-Latn-EC": "103 Singo a'i",
-      "en": "Black People",
-      "es": "El negro",
-      "_default": "Singo a'i"
+      "_default": "Teharenhsáhkhwa"
     },
     "media": {
       "audio": "",
-      "video": ""
+      "video": "https://github.com/austinwkraft/LingView/releases/download/v0.1.0/Teharenhsahkhwa.mp4"
     },
-    "languages": [
-      "con-Latn-EC",
-      "en",
-      "es"
-    ],
+    "languages": [],
     "date_created": "",
-    "date_uploaded": "2/3/2018",
+    "date_uploaded": "12/15/2025",
     "source": {
-      "con-Latn-EC": "Blaser, Magdalena \"Mitos del pueblo Cofán\"",
-      "en": "Blaser, Magdalena \"Myths of the Cofán people\"",
       "_default": ""
     },
     "description": "",
     "genre": "",
     "author": "",
     "glosser": "",
-    "speakers": [],
-    "xml_file_name": "103.xml",
-    "source_filetype": "FLEx",
-    "tier IDs": {
-      "palabra en a'ingae (ortografía Borman)": {
-        "subdivided": true
-      },
-      "morfema (como en el texto) en a'ingae (ortografía Borman)": {
-        "subdivided": true
-      },
-      "morfema (forma típica) en a'ingae (ortografía Borman)": {
-        "subdivided": true
-      },
-      "glosa de morfema en inglés": {
-        "subdivided": true
-      },
-      "frase en inglés": {
-        "subdivided": false
-      },
-      "frase en Español": {
-        "subdivided": false
-      },
-      "frase en a'ingae (ortografía Borman)": {
-        "subdivided": false
-      }
-    }
-  },
-  "1ed3d641-acd9-4466-811d-17c8ed59844c": {
-    "timed": true,
-    "story ID": "1ed3d641-acd9-4466-811d-17c8ed59844c",
-    "title": {
-      "_default": "Kuke chiste"
-    },
-    "media": {
-      "audio": "20170804_kuke_chiste_FACQ.mp3",
-      "video": "20170804_kuke_chiste_FACQ_handbrake.mp4"
-    },
-    "languages": [],
-    "date_created": "",
-    "date_uploaded": "8/30/2018",
-    "source": {
-      "_default": ""
-    },
-    "description": "A joke about a hare\n",
-    "genre": "",
-    "author": "",
-    "glosser": "",
     "speakers": [
-      "Fausto Criollo"
+      "Mary Onwá:ri Tekahawáhkwen McDonald"
     ],
-    "xml_file_name": "20170804_kuke_chiste_FACQ.eaf",
+    "xml_file_name": "Teharenhsáhkhwa.eaf",
     "source_filetype": "ELAN",
     "tier IDs": {
-      "Gloss": {
-        "subdivided": true
-      },
-      "Glosa": {
-        "subdivided": true
-      },
-      "Ortografía vieja": {
-        "subdivided": true
-      },
-      "Morfema": {
-        "subdivided": true
+      "Kanien'kéha": {
+        "subdivided": false
       },
       "English": {
+        "subdivided": false
+      },
+      "words": {
         "subdivided": true
       },
-      "Español": {
+      "word translation": {
         "subdivided": true
       },
-      "A'ingae": {
+      "morpheme break": {
+        "subdivided": true
+      },
+      "morpheme gloss": {
         "subdivided": true
       }
     },
     "speaker IDs": {
       "S1": {
-        "name": "Fausto Criollo",
-        "tier": "--"
+        "name": "Mary Onwá:ri Tekahawáhkwen McDonald",
+        "language": "moh",
+        "tier": "Kanien'kéha"
       }
     }
   }
