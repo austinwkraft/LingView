@@ -124,7 +124,6 @@ td {
 		Timed */
 
 #video {
-	width: 40vw; /* an attempt to avoid flickering scrollbar glitch */
     outline: none;
 }
 
@@ -412,3 +411,37 @@ video {
 	align-items: center;
 	height: 10em;
 }
+a.tooltip {
+	position: relative;
+	text-decoration: none;
+	color: blue;
+}
+
+a.tooltip span {
+	display: none;
+	padding: 14px 20px;
+	top: 53px;
+	right: 5px;
+	width: 240px;
+	line-height: 25px;
+	position: fixed; 
+	/*position: absolute; */
+	text-wrap: wrap;
+}
+
+a.tooltip:hover span {
+	display: block;
+	color: black;
+	background-color: #ffffff;
+	font-size: 20px;
+	border: 1px solid black;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; 
+}
+
+/*
+table, th, td{
+    border: 1px solid black;
+}
+*/
