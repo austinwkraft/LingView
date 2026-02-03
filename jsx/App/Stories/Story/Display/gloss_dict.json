@@ -47,6 +47,8 @@
     "N.P":"N.P - Neuter patient",
     "1IN.PL.A":"1IN.PL.A - First-person inclusive plural agent.",
     "1IN.DU.A":"1IN.DU.A - First-person inclusive dual agent.",
+    "FZPL.A": "FZPL.A - Third-person feminine-zoic plural agent.",
+    "FZSG.A" : "FZSG.A - Third-person feminine-zoic singular agent.", 
     "FZ.DU.A":"FZ.DU.A - Third-person feminine-zoic dual agent.",
     "FZ.PL.A":"FZ.PL.A - Third-person feminine-zoic plural agent.",
     "MPL.A":"MPL.A - Third-person masculine plural agent.",

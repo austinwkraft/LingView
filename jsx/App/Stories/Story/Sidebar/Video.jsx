@@ -8,14 +8,21 @@ export class Video extends React.Component {
 
 	static show() {
 		// Resize panels:
-		var extraHeight = 88; // NavBar plus footer.
+		// adjusted to account for page margins and tooltips panel
+		var extraHeight = 108; // NavBar plus footer and margins.
 		var bodyHeight = 'calc(100% - ' + extraHeight.toString() + "px)";
 
-		$('#leftPanel').css('width', '40%');
+		var marginWidth = 40;
+		var leftWidth = 'calc(40% - ' + marginWidth.toString() + 'px)';
+		
+		var toolTipsWidth = 290; // tooltips plus 5px margin
+		var centerWidth = 'calc(60% - ' + (toolTipsWidth).toString() + 'px)';
+
+		$('#leftPanel').css('width', leftWidth);
 		$('#leftPanel').css('height', bodyHeight);
-		$('#centerPanel').css('margin-left', '40%');
+		$('#centerPanel').css('margin-left', leftWidth);
 		$('#centerPanel').css('height', bodyHeight);
-		$("#centerPanel").css("width", "60%");
+		$("#centerPanel").css("width", centerWidth);
 
 		// Deactivate audio (only if the audio footer exists)
 		if ($('#footer').length) {
@@ -30,6 +37,8 @@ export class Video extends React.Component {
 		$('#video').attr('data-live', 'true');
 		$('#video').attr('ontimeupdate', 'sync(this.currentTime)');
 		$('#video').attr('onclick', 'sync(this.currentTime)');
+		// Set video width to match left panel
+		$('#video').css('width', '100%');
 
 		// Match times:
 		var audio = document.getElementById('audio');
@@ -47,14 +56,15 @@ export class Video extends React.Component {
 
 	static hide() {
 		// Resize panels:
-		var extraHeight = 128; // NavBar plus footer plus audio.
+		var extraHeight = 148; // NavBar plus footer plus audio and margins.
 		var bodyHeight = 'calc(100% - ' + extraHeight.toString() + "px)";
 
 		$("#leftPanel").css("width", "300px");
 		$("#leftPanel").css("height", bodyHeight);
 		$("#centerPanel").css("height", bodyHeight);
-		$("#centerPanel").css("margin-left", "300px");
-		$("#centerPanel").css("width", "calc(100% - 300px)");
+		// edited to account for page margins and tooltips panel
+		$("#centerPanel").css("margin-left", "340px");
+		$("#centerPanel").css("width", "calc(100% - 670px)");
 
 		// Deactivate video:
 		$("#video").css("display", "none");
