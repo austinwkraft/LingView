@@ -276,8 +276,8 @@ export const latexLibraryText = {
 };
 
 export const footerText = {
-  [ENGLISH]: "The last update to this LingView website was in February 2026. This website is powered by ",
+  [ENGLISH]: "The latest update to this LingView website was in February 2026. This website is powered by ",
   //[ESPANOL]: "Este sitio web funciona con ",
   //[FRANCAIS]: "Ce site Web est alimenté par ",
-	[KANIENKEHA]: "The last update to this LingView website was in February 2026. This website is powered by ", // Need Kanien'kéha translation
+	[KANIENKEHA]: "The latest update to this LingView website was in February 2026. This website is powered by ", // Need Kanien'kéha translation
 };
