@@ -13,7 +13,10 @@ const aboutPageJSX = {
         Kanien'kéha grammar is known for its large inventory of pronominal prefixes, its polysynthetic morphology, and its frequent usage of noun incorporation.
         </p>
         <p>The Kanien'kehá:ka—the speakers of Kanien'kéha—are leading language revitalization programs including adult immersion, to reestablish generational transmission of the language. This website is intended as a prototype for language resources, to be customized according to community interests and needs.</p>
-    <h2>About the orthography</h2>
+    <h2>Creating your own offline LingView</h2>
+      <p>Visit <a href = 'https://docs.google.com/document/d/1suRRFZXG-HXnErtKHcImDwN27VqbaSPdg56KJub4kZ4/edit?usp=sharing'>this page</a> for a short guide in getting started with an offline LingView resource of your own.
+      With an offline LingView project, you can add and manage transcription files.</p>
+      <h2>About the orthography</h2>
         <p>In the transcriptions on this site, we generally adhere to the orthography standards established for Kanien'kéha (Lazore 1993), acknowledging that there is dialectal variation in how particular sounds are represented. </p>
     <h2>References and additional resources</h2>
     <ul>
