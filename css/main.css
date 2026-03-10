@@ -445,3 +445,21 @@ table, th, td{
     border: 1px solid black;
 }
 */
+
+
+/* testing sentence flexbox container stuff out */
+
+.sentenceContainer{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.indepItem{
+	width: 100%;
+}
+
+.depItem{
+	display: grid;
+	width: fit-content;
+}

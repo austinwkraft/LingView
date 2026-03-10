@@ -106,87 +106,27 @@ function Row({ numSlots, values, tier }) {
 	return <tr data-tier={htmlEscape(tier)}>{output}</tr>;
 }
 
-function IndependentTiers({ Tiers }) {
-	// I/P: list of independent tiers
-	// O/P: list of flex items containing the idependant tiers represented as p elements
-	let expArray = [];
-	for (const {values, tier} of Tiers) {
-		if (tier == 'morpheme gloss') {
-			let exp = <GlossLine key={id.generate()} text={values[0]['value']}/>
-			expArray.push(<p key={id.generate()} className = "indepItem" data-tier={htmlEscape(tier)}>{exp}</p>);
-		} else {
-			expArray.push(<p key={id.generate()} className = "indepItem" data-tier={htmlEscape(tier)}>{values[0]['value']}</p>);
-		}
-	}
-	return expArray;
-}
-
-function DependentTiers({ Tiers }) {
-	// I/P: list of dependent tiers
-	// O/P: list of flex items containing each segment of the dependent tiers grouped by column and represented as a single column table
-	let rowNum = Tiers.size;
-	let slots = {}; // map from slot number to list of {value, tier} objects corresponding to that slot. This will be used to group values from different tiers into the same column if they share the same slot number.
-	let expArray = [];
-	for (const {values, tier} of Tiers) {
-		for (const v of values) {
-			if (!slots[v['start_slot']]) {
-				slots[v['start_slot']] = [];
-			}
-			slots[v['start_slot']].push({value: v['value'], tier: tier});
-		}
-	}
-	for (var key in slots) {
-		let rowArray = [];
-		for (const {value, tier} of slots[key]) {
-			let exp;
-			if (tier == 'morpheme gloss') {
-				let gloss = <GlossLine key={id.generate()} text={value}/>
-				exp =<td key={id.generate()}>{gloss}</td>;
-			} else {
-				exp = <td key={id.generate()}>{value}</td>;
-			}
-			rowArray.push(<tr data-tier={htmlEscape(tier)}>{exp}</tr>)
-		}
-		// fill in empty slots with blank rows
-		// Note: this only works if the empty slots are in the bottom rows
-		if (rowArray.length < rowNum) {
-			while (rowArray.length < rowNum) {
-				rowArray.push(<tr><td key={id.generate()}></td></tr>);
-			}
-		}
-		expArray.push(<table key={id.generate()} className="depItem"><tbody>{rowArray}</tbody></table>);
-	}
-	return expArray;
-}
-
 export function Sentence({ sentence }) {
 	// I/P: sentence, a sentence
-	// O/P: flexbox container with items corresponding to independent tiers and grouped dependent tiers
-	let itemList = []; // to be output
+	// O/P: table of glossed Row components
+	let rowList = []; // to be output
 	const numSlots = sentence['num_slots'];
 	// Add the indepentent tier, i.e., the top row, to the list of rows.
 	// Note that 'colSpan={numSlots}' ensures that this row spans the entire table.
   	if (sentence['noTopRow'] == null || sentence['noTopRow'] === 'false') {
-    itemList.push(
-      <div className="topRow" data-tier={htmlEscape(sentence['tier'])}>
-		{sentence['text']}
-      </div>
+    rowList.push(
+      <tr data-tier={htmlEscape(sentence['tier'])}>
+        <td colSpan={numSlots} className="topRow">{sentence['text']}</td>
+      </tr>
     );
-  	}
+	}
 	const dependents = sentence['dependents']; // list of dependent tiers, flat structure
 	// Add each dependent tier to the row list:
-	let indepTiers = new Set();
-	let depTiers = new Set();
-	for (const dep of dependents) {
-		if (dep['values'].length == 1) {
-			indepTiers.add(dep);
-		} else {
-			depTiers.add(dep);
-		}
+	for (const {values, tier} of dependents) {
+		// Tier attribute will be used for hiding/showing tiers.
+		rowList.push(<Row key={id.generate()} numSlots={numSlots} values={values} tier={tier} />);
 	}
-	itemList = [...itemList, <IndependentTiers key={id.generate()} Tiers={indepTiers}/>];
-	itemList = [...itemList, <DependentTiers key={id.generate()} Tiers={depTiers} />];
-	return <div className="sentenceContainer">{itemList}</div>;
+	return <table className="gloss"><tbody>{rowList}</tbody></table>;
 }
 
 
@@ -222,22 +162,5 @@ export function SearchSentence({ sentence }) {
 	url += ("story/" + sentence["story ID"] + "?" + query_index);
 
     // hacky way to introduce a line break (extra <tr> of height 12px)
-	return <div className="searchSentence">
-				<table className="gloss">
-					<thead>
-						<tr>
-					    	<td>
-								<b> <TranslatableText dictionary={storySearchText} /></b>: {title}
-							</td>
-						</tr>
-						<tr style={{"height": "12px"}}></tr>
-					</thead>
-					<tbody>{rowList}</tbody>
-				</table>
-				<div class="storyLink">
-					<a target="_blank" href={url}>
-						<TranslatableText dictionary={storySearchViewStoryText} />
-					</a>
-				</div>
-			</div>;
+	return <div className="searchSentence"><table className="gloss"><thead><tr><td><b> <TranslatableText dictionary={storySearchText} /></b>: {title}</td></tr><tr style={{"height": "12px"}}></tr></thead><tbody>{rowList}</tbody></table><div class="storyLink"><a target="_blank" href={url}><TranslatableText dictionary={storySearchViewStoryText} /></a></div></div>;
 }
