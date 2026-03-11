@@ -12,7 +12,7 @@ Front-end code written with [ReactJS](https://reactjs.org/).
 If you are an end-user looking to access the Kanien'kéha LingView website produced as a final project for LING 415/610 at McGill University, Fall 2023, it can be found [here](https://kanienkeha-lingview.lingspace.org/#/). It displays the captioned video “Teharenhsáhkhwa”.  
 
 ## Setting up an offline instance of LingView
-*A basic set-up guide is available at in [this two-page illustrated guide](https://docs.google.com/document/d/1suRRFZXG-HXnErtKHcImDwN27VqbaSPdg56KJub4kZ4/edit?tab=t.0). This short guide can replace all of the steps below.*
+*A basic set-up guide is available in [this two-page illustrated guide](https://docs.google.com/document/d/1suRRFZXG-HXnErtKHcImDwN27VqbaSPdg56KJub4kZ4/edit?tab=t.0). This short guide can replace all of the steps below.*
 
 1. Install Node.js and NPM from [nodeJs.org/en/download.](nodeJs.org/en/download). Select the appropriate installer package to download and run. The version should be at least 16.
 
