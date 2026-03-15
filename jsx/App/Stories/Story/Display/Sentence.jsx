@@ -82,7 +82,7 @@ function Row({ numSlots, values, tier }) {
 		// Add blank space before current value:
 		if (startSlot > currentSlot) {
 			const diff = String(startSlot - currentSlot);
-			output.push(<td key={id.generate()} colSpan={diff} />);
+			output.push(<td key={id.generate()} colSpan={diff}> </td>);
 		}
 		// Create element with correct 'colSpan' width:
 		const size = String(endSlot - startSlot);
@@ -121,38 +121,72 @@ function IndependentTiers({ Tiers }) {
 	return expArray;
 }
 
-function DependentTiers({ Tiers }) {
+function DependentTiers({ Tiers, tierList }) {
 	// I/P: list of dependent tiers
-	// O/P: list of flex items containing each segment of the dependent tiers grouped by column and represented as a single column table
-	let rowNum = Tiers.size;
+	// O/P: list of tier containers containing each segment of the dependent tiers grouped by column and represented as a single column table
 	let slots = {}; // map from slot number to list of {value, tier} objects corresponding to that slot. This will be used to group values from different tiers into the same column if they share the same slot number.
+	let slotArray = []; // list of slot numbers
 	let expArray = [];
+	// make the slots map from the first dependent tier (as it has the minimal partition of the sentence)
+	// populate the slot map with the values from the dependent tiers.
+	let counter = 0;
 	for (const {values, tier} of Tiers) {
-		for (const v of values) {
-			if (!slots[v['start_slot']]) {
+		if (counter == 0) {
+			for (const v of values) {
+				slotArray.push(v['start_slot']);
 				slots[v['start_slot']] = [];
 			}
-			slots[v['start_slot']].push({value: v['value'], tier: tier});
+			counter++;
+		}
+		for (const v of values) {
+			let slotNum = v['start_slot'];
+			if (!slots[slotNum]) {
+				if (slotArray[-1] < slotNum) {
+					slotNum = slotArray[-1];
+				} else {
+					while (!slots[slotNum]) {
+						slotNum++;
+					}
+				}
+			}
+			slots[slotNum].push({value: v['value'], tier: tier});
 		}
 	}
 	for (var key in slots) {
-		let rowArray = [];
+		let numSlots = 0;
 		for (const {value, tier} of slots[key]) {
-			let exp;
-			if (tier == 'morpheme gloss') {
-				let gloss = <GlossLine key={id.generate()} text={value}/>
-				exp =<td key={id.generate()}>{gloss}</td>;
-			} else {
-				exp = <td key={id.generate()}>{value}</td>;
+			if (value.length > numSlots) {
+				numSlots = value.length;
+			}
+		}
+		// group by tier so that values from the same tier are in the same row of the table
+		const tierGroups = Object.groupBy(slots[key], x => x.tier);
+		let rowArray = [];
+		for (const tier of tierList) {
+			let values = tierGroups[tier];
+			if (!values) {
+				rowArray.push(<tr data-tier={htmlEscape(tier)}><td key={id.generate()}> </td></tr>);
+				continue;
+			}
+			let currentSlot = key;
+			let exp = [];
+			for (const {value} of values) {
+				if (currentSlot < value['start_slot']) {
+					const diff = String(value['start_slot'] - currentSlot);
+					exp.push(<td key={id.generate()} colSpan={diff}> </td>);
+				}
+				if (tier == 'morpheme gloss') {
+					let gloss = <GlossLine key={id.generate()} text={value}/>
+					exp =<td key={id.generate()} colSpan={String(value['end_slot'] - value['start_slot'])}>{gloss}</td>;
+				} else {
+					exp = <td key={id.generate()} colSpan={String(value['end_slot'] - value['start_slot'])}>{value}</td>;
+				}
+				currentSlot = value['end_slot'];
+			}
+			if (currentSlot < key + numSlots) {
+				exp.push(<td key={id.generate()} colSpan={String(key + numSlots - currentSlot)}> </td>);
 			}
 			rowArray.push(<tr data-tier={htmlEscape(tier)}>{exp}</tr>)
-		}
-		// fill in empty slots with blank rows
-		// Note: this only works if the empty slots are in the bottom rows
-		if (rowArray.length < rowNum) {
-			while (rowArray.length < rowNum) {
-				rowArray.push(<tr><td key={id.generate()}></td></tr>);
-			}
 		}
 		expArray.push(<table key={id.generate()} className="depItem"><tbody>{rowArray}</tbody></table>);
 	}
@@ -168,24 +202,26 @@ export function Sentence({ sentence }) {
 	// Note that 'colSpan={numSlots}' ensures that this row spans the entire table.
   	if (sentence['noTopRow'] == null || sentence['noTopRow'] === 'false') {
     itemList.push(
-      <div className="topRow" data-tier={htmlEscape(sentence['tier'])}>
+      <p className="topRow" data-tier={htmlEscape(sentence['tier'])}>
 		{sentence['text']}
-      </div>
+      </p>
     );
   	}
 	const dependents = sentence['dependents']; // list of dependent tiers, flat structure
 	// Add each dependent tier to the row list:
 	let indepTiers = new Set();
 	let depTiers = new Set();
+	let depTiersList = [];
 	for (const dep of dependents) {
 		if (dep['values'].length == 1) {
 			indepTiers.add(dep);
 		} else {
 			depTiers.add(dep);
+			depTiersList.push(dep['tier']);
 		}
 	}
 	itemList = [...itemList, <IndependentTiers key={id.generate()} Tiers={indepTiers}/>];
-	itemList = [...itemList, <DependentTiers key={id.generate()} Tiers={depTiers} />];
+	itemList = [...itemList, <DependentTiers key={id.generate()} Tiers={depTiers} tierList={depTiersList}/>];
 	return <div className="sentenceContainer">{itemList}</div>;
 }
 
