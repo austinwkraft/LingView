@@ -89,9 +89,9 @@ function Row({ numSlots, values, tier }) {
 		if (tier == 'morpheme gloss'){ 
 			// Only add glossing explanation on the tier corresponding to the morpheme gloss
 			// Generate the components for the tooltips
-			let exp = <GlossLine key={id.generate()} text={text}/>
+			let exp = <GlossLine key={id.generate()} text={text}/>;
 			// add to the table data component
-			output.push(<td key={id.generate()} colSpan={size}>{exp}</td>)
+			output.push(<td key={id.generate()} colSpan={size}>{exp}</td>);
 		}
 		else {
 			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
@@ -112,7 +112,7 @@ function IndependentTiers({ Tiers }) {
 	let expArray = [];
 	for (const {values, tier} of Tiers) {
 		if (tier == 'morpheme gloss') {
-			let exp = <GlossLine key={id.generate()} text={values[0]['value']}/>
+			let exp = <GlossLine key={id.generate()} text={values[0]['value']}/>;
 			expArray.push(<p key={id.generate()} className = "indepItem" data-tier={htmlEscape(tier)}>{exp}</p>);
 		} else {
 			expArray.push(<p key={id.generate()} className = "indepItem" data-tier={htmlEscape(tier)}>{values[0]['value']}</p>);
@@ -149,16 +149,13 @@ function DependentTiers({ Tiers, tierList }) {
 					}
 				}
 			}
-			slots[slotNum].push({value: v['value'], tier: tier});
+			slots[slotNum].push({value: v['value'], tier: tier, start_slot: v['start_slot'], end_slot: v['end_slot']});
 		}
 	}
 	for (var key in slots) {
-		let numSlots = 0;
-		for (const {value, tier} of slots[key]) {
-			if (value.length > numSlots) {
-				numSlots = value.length;
-			}
-		}
+		const end = slots[key][0]['end_slot'];
+		const start = slots[key][0]['start_slot'];
+		let numSlots = end - start;
 		// group by tier so that values from the same tier are in the same row of the table
 		const tierGroups = Object.groupBy(slots[key], x => x.tier);
 		let rowArray = [];
@@ -170,23 +167,28 @@ function DependentTiers({ Tiers, tierList }) {
 			}
 			let currentSlot = key;
 			let exp = [];
-			for (const {value} of values) {
-				if (currentSlot < value['start_slot']) {
-					const diff = String(value['start_slot'] - currentSlot);
-					exp.push(<td key={id.generate()} colSpan={diff}> </td>);
+			for (const value of values) {
+				const startSlot = value['start_slot'];
+				const endSlot = value['end_slot'];
+				const text = value['value'];
+				if (currentSlot < startSlot) {
+					const diff = String(startSlot - currentSlot);
+					exp.push(<td key={id.generate()} colSpan={diff}/>);
 				}
+				const size = String(endSlot - startSlot);
 				if (tier == 'morpheme gloss') {
-					let gloss = <GlossLine key={id.generate()} text={value}/>
-					exp =<td key={id.generate()} colSpan={String(value['end_slot'] - value['start_slot'])}>{gloss}</td>;
+					let gloss = <GlossLine key={id.generate()} text={text}/>;
+					exp.push(<td key={id.generate()} colSpan={size}>{gloss}</td>);
 				} else {
-					exp = <td key={id.generate()} colSpan={String(value['end_slot'] - value['start_slot'])}>{value}</td>;
+					exp.push(<td key={id.generate()} colSpan={size}>{text}</td>);
 				}
-				currentSlot = value['end_slot'];
+				currentSlot = endSlot;
 			}
 			if (currentSlot < key + numSlots) {
-				exp.push(<td key={id.generate()} colSpan={String(key + numSlots - currentSlot)}> </td>);
+				const diff = String(key + numSlots - currentSlot);
+				exp.push(<td key={id.generate()} colSpan={diff}/>);
 			}
-			rowArray.push(<tr data-tier={htmlEscape(tier)}>{exp}</tr>)
+			rowArray.push(<tr data-tier={htmlEscape(tier)}>{exp}</tr>);
 		}
 		expArray.push(<table key={id.generate()} className="depItem"><tbody>{rowArray}</tbody></table>);
 	}
@@ -202,7 +204,7 @@ export function Sentence({ sentence }) {
 	// Note that 'colSpan={numSlots}' ensures that this row spans the entire table.
   	if (sentence['noTopRow'] == null || sentence['noTopRow'] === 'false') {
     itemList.push(
-      <p className="topRow" data-tier={htmlEscape(sentence['tier'])}>
+      <p className="topRowItem" data-tier={htmlEscape(sentence['tier'])}>
 		{sentence['text']}
       </p>
     );
@@ -213,7 +215,9 @@ export function Sentence({ sentence }) {
 	let depTiers = new Set();
 	let depTiersList = [];
 	for (const dep of dependents) {
-		if (dep['values'].length == 1) {
+		if (dep['values'].length == 1 && 
+			dep['values'][0]['start_slot'] == 0 &&
+			dep['values'][0]['end_slot'] == numSlots) {
 			indepTiers.add(dep);
 		} else {
 			depTiers.add(dep);

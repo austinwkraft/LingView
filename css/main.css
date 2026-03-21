@@ -129,9 +129,6 @@ td {
 
 #centerPanel {
 	position: fixed;
-	margin-left: 300px;
-	width: calc(100% - 300px);
-	height: calc(100% - 88px); /* Minus the navBar and the footer. */
 	overflow-y: auto;
 	overflow-x: hidden;
 }
@@ -443,11 +440,11 @@ a.tooltip:hover span {
 /*
 table, th, td{
     border: 1px solid black;
-}
-*/
+}*/
 
 
-/* testing sentence flexbox container stuff out */
+
+/* Sentence Flexbox Container Styles */
 
 .sentenceContainer{
 	display: flex;
@@ -455,11 +452,33 @@ table, th, td{
 	flex-wrap: wrap;
 }
 
+.topRowItem {
+	font-weight: 600;
+	width: 100%;
+	margin-top: 3px;
+	margin-bottom: 5px;
+	padding-left: 9px
+}
+
 .indepItem{
 	width: 100%;
+	margin-top: 3px;
+	margin-bottom: 5px;
+	padding-left: 9px;
 }
 
 .depItem{
 	display: grid;
 	width: fit-content;
+	padding-left: 8px;
+	margin-top: 3px;
+	margin-bottom: 5px;
+}
+
+.depItem tr {
+	border-width: 0;
+}
+
+.depItem td {
+	padding: 0px 0px 2px;
 }

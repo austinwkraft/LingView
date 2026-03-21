@@ -89,9 +89,9 @@ function Row({ numSlots, values, tier }) {
 		if (tier == 'morpheme gloss'){ 
 			// Only add glossing explanation on the tier corresponding to the morpheme gloss
 			// Generate the components for the tooltips
-			let exp = <GlossLine key={id.generate()} text={text}/>
+			let exp = <GlossLine key={id.generate()} text={text}/>;
 			// add to the table data component
-			output.push(<td key={id.generate()} colSpan={size}>{exp}</td>)
+			output.push(<td key={id.generate()} colSpan={size}>{exp}</td>);
 		}
 		else {
 			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
