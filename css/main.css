@@ -53,13 +53,13 @@ body {
 
 /* margin for all pages */
 .content {
-	margin-top: 20px;
 	margin-left: 40px;
 	margin-right: 40px;
 	margin-bottom: 50px; /* space for footer plus extra whitespace */
 }
 
 #leftPanel {
+	margin-top: 20px;
 	width: 300px;
 	position: fixed;
 	overflow-x: hidden;

@@ -211,13 +211,18 @@ export function Sentence({ sentence }) {
 	const dependents = sentence['dependents']; // list of dependent tiers, flat structure
 	// Add each dependent tier to the row list:
 	let indepTiers = new Set();
+	let noteTiers = new Set();
 	let depTiers = new Set();
 	let depTiersList = [];
 	for (const dep of dependents) {
 		if (dep['values'].length == 1 && 
 			dep['values'][0]['start_slot'] == 0 &&
 			dep['values'][0]['end_slot'] == numSlots) {
-			indepTiers.add(dep);
+			if (dep['tier'].toLowerCase().includes('note')) {
+				noteTiers.add(dep);
+			} else {
+				indepTiers.add(dep);
+			}
 		} else {
 			depTiers.add(dep);
 			depTiersList.push(dep['tier']);
@@ -225,6 +230,7 @@ export function Sentence({ sentence }) {
 	}
 	itemList = [...itemList, <IndependentTiers key={id.generate()} Tiers={indepTiers}/>];
 	itemList = [...itemList, <DependentTiers key={id.generate()} Tiers={depTiers} tierList={depTiersList}/>];
+	itemList = [...itemList, <IndependentTiers key={id.generate()} Tiers={noteTiers}/>];
 	return <div className="sentenceContainer">{itemList}</div>;
 }
 

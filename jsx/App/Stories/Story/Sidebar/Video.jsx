@@ -9,7 +9,7 @@ export class Video extends React.Component {
 	static show() {
 		// Resize panels:
 		// adjusted to account for page margins and tooltips panel
-		var extraHeight = 108; // NavBar plus footer and margins.
+		var extraHeight = 88; // NavBar plus footer and margins.
 		var bodyHeight = 'calc(100% - ' + extraHeight.toString() + "px)";
 
 		var marginWidth = 40;
@@ -56,7 +56,7 @@ export class Video extends React.Component {
 
 	static hide() {
 		// Resize panels:
-		var extraHeight = 148; // NavBar plus footer plus audio and margins.
+		var extraHeight = 128; // NavBar plus footer plus audio and margins.
 		var bodyHeight = 'calc(100% - ' + extraHeight.toString() + "px)";
 
 		$("#leftPanel").css("width", "300px");
