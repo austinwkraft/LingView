@@ -15,14 +15,14 @@ export class Video extends React.Component {
 		var marginWidth = 40;
 		var leftWidth = 'calc(40% - ' + marginWidth.toString() + 'px)';
 		
-		var toolTipsWidth = 290; // tooltips plus 5px margin
-		var centerWidth = 'calc(60% - ' + (toolTipsWidth).toString() + 'px)';
+		//var toolTipsWidth = 290; // tooltips plus 5px margin
+		// var centerWidth = 'calc(60% - ' + (toolTipsWidth).toString() + 'px)';
 
 		$('#leftPanel').css('width', leftWidth);
 		$('#leftPanel').css('height', bodyHeight);
 		$('#centerPanel').css('margin-left', leftWidth);
 		$('#centerPanel').css('height', bodyHeight);
-		$("#centerPanel").css("width", centerWidth);
+		$("#centerPanel").css("width", "60%");
 
 		// Deactivate audio (only if the audio footer exists)
 		if ($('#footer').length) {
@@ -64,7 +64,7 @@ export class Video extends React.Component {
 		$("#centerPanel").css("height", bodyHeight);
 		// edited to account for page margins and tooltips panel
 		$("#centerPanel").css("margin-left", "340px");
-		$("#centerPanel").css("width", "calc(100% - 670px)");
+		$("#centerPanel").css("width", "calc(100% - 380px)");
 
 		// Deactivate video:
 		$("#video").css("display", "none");

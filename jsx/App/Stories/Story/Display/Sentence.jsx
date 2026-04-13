@@ -140,13 +140,12 @@ function DependentTiers({ Tiers, tierList }) {
 		}
 		for (const v of values) {
 			let slotNum = v['start_slot'];
-			if (!slots[slotNum]) {
-				if (slotArray[-1] < slotNum) {
-					slotNum = slotArray[-1];
-				} else {
-					while (!slots[slotNum]) {
-						slotNum++;
-					}
+			while (!slotArray.includes(slotNum)) {
+				slotNum--;
+				if (slotNum < 0) {
+					// this should never happen, but just in case, assign to slot 0
+					slotNum = 0;
+					break;
 				}
 			}
 			slots[slotNum].push({value: v['value'], tier: tier, start_slot: v['start_slot'], end_slot: v['end_slot']});
