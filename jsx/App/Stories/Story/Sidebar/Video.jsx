@@ -8,19 +8,13 @@ export class Video extends React.Component {
 
 	static show() {
 		// Resize panels:
-		// adjusted to account for page margins and tooltips panel
-		var extraHeight = 88; // NavBar plus footer and margins.
-		var bodyHeight = 'calc(100% - ' + extraHeight.toString() + "px)";
-
-		var marginWidth = 40;
-		var leftWidth = 'calc(40% - ' + marginWidth.toString() + 'px)';
-		
-		//var toolTipsWidth = 290; // tooltips plus 5px margin
-		// var centerWidth = 'calc(60% - ' + (toolTipsWidth).toString() + 'px)';
+		var leftWidth = 'calc(40% - 40px)'; // 40% minus margins inheritedfrom content
+		var leftHeight = 'calc(100% - 108px)'; // 100% minus NavBar, footer, and top margin
+		var bodyHeight = 'calc(100% - 88px)'; // 100% minus NavBar and footer
 
 		$('#leftPanel').css('width', leftWidth);
-		$('#leftPanel').css('height', bodyHeight);
-		$('#centerPanel').css('margin-left', leftWidth);
+		$('#leftPanel').css('height', leftHeight); 
+		$('#centerPanel').css('margin-left', leftWidth); // offset of the center panel is the width of the left panel
 		$('#centerPanel').css('height', bodyHeight);
 		$("#centerPanel").css("width", "60%");
 
@@ -56,15 +50,16 @@ export class Video extends React.Component {
 
 	static hide() {
 		// Resize panels:
-		var extraHeight = 128; // NavBar plus footer plus audio and margins.
-		var bodyHeight = 'calc(100% - ' + extraHeight.toString() + "px)";
+		var leftHeight = 'calc(100% - 128px)'; // 100% minus NavBar, footer, and audio player
+		var bodyHeight = 'calc(100% - 88px)'; // 100% minus NavBar and footer
+		var centerWidth = 'calc(100% - 360px)'; // 100% minus left panel width and margins inherited from content
 
-		$("#leftPanel").css("width", "300px");
-		$("#leftPanel").css("height", bodyHeight);
+		$("#leftPanel").css("width", "320px"); 
+		$("#leftPanel").css("height", leftHeight);
+		$("#leftPanel").css("margin-right", "20px");
 		$("#centerPanel").css("height", bodyHeight);
-		// edited to account for page margins and tooltips panel
-		$("#centerPanel").css("margin-left", "340px");
-		$("#centerPanel").css("width", "calc(100% - 380px)");
+		$("#centerPanel").css("margin-left", "320px"); // offset of the center panel is the width of the left panel
+		$("#centerPanel").css("width", centerWidth);
 
 		// Deactivate video:
 		$("#video").css("display", "none");

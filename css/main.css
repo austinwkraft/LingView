@@ -6,6 +6,11 @@ body {
 	background-color: rgb(248,248,248);
 }
 
+/* padding for search boxes on index of texts and search page */
+#indexTable_filter, #searchForm {
+	padding-top: 10px;
+}
+
 /* nav bar styles */
 #navbar {
     min-height: 48px;
@@ -59,12 +64,10 @@ body {
 }
 
 #leftPanel {
-	margin-top: 20px;
-	width: 300px;
+	padding-top: 20px;
 	position: fixed;
 	overflow-x: hidden;
 	overflow-y: auto;
-	height: calc(100% - 88px); /* Minus the navBar and the footer. */
 	background-color: rgb(248,248,248);
 }
 
@@ -150,17 +153,6 @@ td {
 	overflow-x: auto;
 }
 
-/*	MAIN.CSS
-	->	Text Display
-		Untimed */
-#untimedTextDisplay {
-	position: fixed;
-	width: calc(100% - 300px);
-	height: calc(100% - 88px); /* Minus the navBar and the footer. */
-	overflow-y: scroll;
-	overflow-x: hidden;
-}
-
 .untimedBlock {
 	clear: both;
 	float: left;
@@ -169,7 +161,7 @@ td {
 	padding-right: 10px;
 	padding-top: 27px;
 	padding-bottom: 27px;
-	width: 100%;
+	width: calc(100% - 300px);
 	overflow-x: auto;
 }
 
@@ -247,19 +239,14 @@ td {
 }
 
 span.timeStamp {
-	padding-top: 3px;
 	float: left;
-	/*margin-right: 9px;*/
-	margin-left: 9px;
-	padding-right: 9px;
 	text-align: center;
 	min-width: 46px;
-	padding-top: 8px;
-	padding-bottom: 5px;
 	color: black;
 	font-weight: 700;
 	text-decoration: none;
 	cursor: pointer;
+	padding: 8px 9px 5px 9px;
 }
 
 .searchSentence {
@@ -315,6 +302,7 @@ ul {
 	padding-right: 20px;
 	font-weight: 700;
 	font-size: 1.7em;
+	overflow-wrap: break-word;
 }
 
 a:visited, a {
@@ -349,8 +337,6 @@ a:visited, a {
 	border-top: 2px solid rgb(151,151,151);
 	border-bottom: 2px solid rgb(151,151,151);
 	background: white;
-/*	padding-left: 2%;
-	padding-right: 2%;*/
 }
 
 .minibarTabs > li {
@@ -408,6 +394,8 @@ video {
 	align-items: center;
 	height: 10em;
 }
+
+/* tooltip styles for glossing explanations */
 a.tooltip {
 	position: relative;
 	text-decoration: none;
@@ -422,7 +410,6 @@ a.tooltip span {
 	width: 240px;
 	line-height: 25px;
 	position: fixed; 
-	/*position: absolute; */
 	text-wrap: wrap;
 }
 
@@ -437,6 +424,7 @@ a.tooltip:hover span {
 	border-radius: 5px; 
 }
 
+/* for testing purposes only, to visualize the table borders */
 /*
 table, th, td{
     border: 1px solid black;
@@ -455,7 +443,8 @@ table, th, td{
 	width: 100%;
 	margin-top: 3px;
 	margin-bottom: 5px;
-	padding-left: 9px
+	padding-left: 9px;
+	text-wrap: wrap;
 }
 
 .indepItem{

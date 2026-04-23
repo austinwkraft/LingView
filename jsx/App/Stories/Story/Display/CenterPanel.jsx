@@ -4,6 +4,7 @@ import { TimedTextDisplay } from './Timed.jsx';
 export function CenterPanel({ timed, sentences, metadata}) {
 	// I/P: timed, a boolean value
 	//      sentences, a list of sentences
+	//      metadata, dictionary of story metadata
 	// O/P: the main panel showing glossing, timestamps, etc.
 	// Status: tested, working
 

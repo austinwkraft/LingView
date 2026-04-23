@@ -3,10 +3,11 @@ import TierSelectionWindow from "./Latex/TierSelectionWindow.jsx";
 import { TranslatableText } from "~./jsx/App/locale/TranslatableText.jsx";
 import { latexButtonText } from "~./jsx/App/locale/LocaleConstants.jsx";
 
-/* 
-  A text format button that renders a window for tier selection on clicked. 
+/* A text format button that renders a window for tier selection on clicked. 
   This tier selection window then leads to a new block displaying the result of LaTeX format conversion.
-*/
+  
+  Note: This tool currently does not account for the top row of sentences */
+  
 export class LatexButton extends React.Component {
 
     constructor(props) {
