@@ -7,7 +7,7 @@
     },
     "media": {
       "audio": "",
-      "video": "https://github.com/austinwkraft/LingView/releases/download/v0.1.0/Teharenhsahkhwa.mp4"
+      "video": "Teharenhsáhkhwa.mp4"
     },
     "languages": [],
     "date_created": "",
@@ -49,6 +49,843 @@
         "name": "Mary Onwá:ri Tekahawáhkwen McDonald",
         "language": "moh",
         "tier": "Kanien'kéha"
+      }
+    }
+  },
+  "4fa8e2f9-6148-4d62-906e-4890ffa5239f": {
+    "timed": true,
+    "story ID": "4fa8e2f9-6148-4d62-906e-4890ffa5239f",
+    "title": {
+      "_default": "HJ_14022023_ELAN"
+    },
+    "media": {
+      "audio": "HJ_ELAN.wav",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "3/30/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [
+      "HJ"
+    ],
+    "xml_file_name": "HJ_14022023_ELAN.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "ortho-spg": {
+        "subdivided": false
+      },
+      "words": {
+        "subdivided": false
+      },
+      "trans-eng": {
+        "subdivided": false
+      },
+      "trans-ind": {
+        "subdivided": false
+      },
+      "morph": {
+        "subdivided": false
+      },
+      "notes": {
+        "subdivided": false
+      },
+      "gloss": {
+        "subdivided": false
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "name": "HJ",
+        "language": "sdq",
+        "tier": "ortho-spg"
+      }
+    }
+  },
+  "9be46611-815f-40c7-9465-6e84fe39fbf7": {
+    "timed": false,
+    "story ID": "9be46611-815f-40c7-9465-6e84fe39fbf7",
+    "title": {
+      "_default": "Acontecimientos sobrenaturales"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "3/30/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [
+      "M.E.R.M"
+    ],
+    "xml_file_name": "Acontecimientos sobrenaturales.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "Transcripción": {
+        "subdivided": false
+      },
+      "Traducción": {
+        "subdivided": false
+      },
+      "Descripción": {
+        "subdivided": false
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "name": "M.E.R.M",
+        "tier": "Transcripción"
+      }
+    }
+  },
+  "a22eabec-052b-441f-b530-b22f21fa9b5d": {
+    "timed": false,
+    "story ID": "a22eabec-052b-441f-b530-b22f21fa9b5d",
+    "title": {
+      "_default": "Bailes de Uspantán"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "3/30/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "Bailes de Uspantán.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "Transcripción": {
+        "subdivided": false
+      },
+      "Traducción": {
+        "subdivided": false
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "Transcripción"
+      }
+    }
+  },
+  "1ed3d641-acd9-4466-811d-17c8ed59844c": {
+    "timed": true,
+    "story ID": "1ed3d641-acd9-4466-811d-17c8ed59844c",
+    "title": {
+      "_default": "20170804_kuke_chiste_FACQ"
+    },
+    "media": {
+      "audio": "reordered_kuke_chiste_FACQ.mp3",
+      "video": "reordered_kuke_chiste_FACQ_handbrake.mp4"
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "3/30/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [
+      "Fausto Criollo"
+    ],
+    "xml_file_name": "20170804_kuke_chiste_FACQ.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "Gloss": {
+        "subdivided": true
+      },
+      "Glosa": {
+        "subdivided": true
+      },
+      "Ortografía vieja": {
+        "subdivided": true
+      },
+      "Morfema": {
+        "subdivided": true
+      },
+      "English": {
+        "subdivided": true
+      },
+      "Español": {
+        "subdivided": true
+      },
+      "A'ingae": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "name": "Fausto Criollo",
+        "tier": "--"
+      }
+    }
+  },
+  "4fb88215-2740-4cf8-aa90-8e040f815ecb": {
+    "timed": false,
+    "story ID": "4fb88215-2740-4cf8-aa90-8e040f815ecb",
+    "title": {
+      "_default": "kh_txt_ATL_20190324_kazym"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/23/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "kh_txt_ATL_20190324_kazym.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "phrase": {
+        "subdivided": false
+      },
+      "translation": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "phrase"
+      }
+    }
+  },
+  "4ff6af34-28d8-42d9-8955-507bc1f53331": {
+    "timed": false,
+    "story ID": "4ff6af34-28d8-42d9-8955-507bc1f53331",
+    "title": {
+      "_default": "kh_txt_KED_DB_20190328_bear_fairytale"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/23/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "kh_txt_KED_DB_20190328_bear_fairytale.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "phrase": {
+        "subdivided": false
+      },
+      "translation": {
+        "subdivided": true
+      },
+      "comment": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "phrase"
+      }
+    }
+  },
+  "6b127972-bbbe-4554-b3c6-a06c47c24370": {
+    "timed": false,
+    "story ID": "6b127972-bbbe-4554-b3c6-a06c47c24370",
+    "title": {
+      "_default": "kh_txt_LZN_IE_20210728_khanty_wedding"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/23/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "kh_txt_LZN_IE_20210728_khanty_wedding.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "phrase": {
+        "subdivided": false
+      },
+      "translation": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "phrase"
+      }
+    }
+  },
+  "d4cd9a88-96f3-45a6-8385-ce0e076db351": {
+    "timed": false,
+    "story ID": "d4cd9a88-96f3-45a6-8385-ce0e076db351",
+    "title": {
+      "_default": "kh_txt_REI_AZ_20180713_village_trip"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/23/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "kh_txt_REI_AZ_20180713_village_trip.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "phrase": {
+        "subdivided": false
+      },
+      "translation": {
+        "subdivided": true
+      },
+      "comment": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "phrase"
+      }
+    }
+  },
+  "4f0a1a83-46b3-4f7f-8867-f465741f6e1b": {
+    "timed": false,
+    "story ID": "4f0a1a83-46b3-4f7f-8867-f465741f6e1b",
+    "title": {
+      "_default": "kh_txt_VVM_AM_20210810_ob_song"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/23/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "kh_txt_VVM_AM_20210810_ob_song.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "phrase": {
+        "subdivided": false
+      },
+      "translation": {
+        "subdivided": true
+      },
+      "comment": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "phrase"
+      }
+    }
+  },
+  "bb3ddd24-24c7-4534-a8a2-aa2e406fb33c": {
+    "timed": false,
+    "story ID": "bb3ddd24-24c7-4534-a8a2-aa2e406fb33c",
+    "title": {
+      "_default": "kh_txt_VVM_DB_20190329_game"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/23/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "kh_txt_VVM_DB_20190329_game.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "phrase": {
+        "subdivided": false
+      },
+      "translation": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "phrase"
+      }
+    }
+  },
+  "b253a6ae-3e7e-4247-a0d7-7a0ba8548360": {
+    "timed": false,
+    "story ID": "b253a6ae-3e7e-4247-a0d7-7a0ba8548360",
+    "title": {
+      "_default": "kh_txt_VVM_DB_20190409_raven_day"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/23/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "kh_txt_VVM_DB_20190409_raven_day.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "phrase": {
+        "subdivided": false
+      },
+      "translation": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "phrase"
+      }
+    }
+  },
+  "d54d9082-d34e-4ec6-a489-5c754070717c": {
+    "timed": false,
+    "story ID": "d54d9082-d34e-4ec6-a489-5c754070717c",
+    "title": {
+      "_default": "kh_txt_EAA_ETF_AZ_20180719_breeding_foxes"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/23/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [],
+    "xml_file_name": "kh_txt_EAA_ETF_AZ_20180719_breeding_foxes.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "phrase": {
+        "subdivided": false
+      },
+      "translation": {
+        "subdivided": true
+      },
+      "comment": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "phrase"
+      }
+    }
+  },
+  "f003caf7-cf4d-4630-a94f-5758a809e957": {
+    "timed": false,
+    "story ID": "f003caf7-cf4d-4630-a94f-5758a809e957",
+    "title": {
+      "_default": "KLN-20041119"
+    },
+    "media": {
+      "audio": "",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "4/28/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [
+      "OMB",
+      "ARM",
+      "RYN",
+      "XXX",
+      "BD",
+      "PTT",
+      "EXPALG"
+    ],
+    "xml_file_name": "KLN-20041119.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "tx@OMB": {
+        "subdivided": false
+      },
+      "tx@ARM": {
+        "subdivided": false
+      },
+      "tx@RYN": {
+        "subdivided": false
+      },
+      "tx@XXX": {
+        "subdivided": false
+      },
+      "tx@BD": {
+        "subdivided": false
+      },
+      "tx@PTT": {
+        "subdivided": false
+      },
+      "tx@EXPALG": {
+        "subdivided": false
+      },
+      "recid@OMB": {
+        "subdivided": false
+      },
+      "recid@ARM": {
+        "subdivided": false
+      },
+      "recid@RYN": {
+        "subdivided": false
+      },
+      "recid@XXX": {
+        "subdivided": false
+      },
+      "recid@BD": {
+        "subdivided": false
+      },
+      "recid@PTT": {
+        "subdivided": false
+      },
+      "recid@EXPALG": {
+        "subdivided": false
+      },
+      "mb@OMB": {
+        "subdivided": false
+      },
+      "mb@ARM": {
+        "subdivided": false
+      },
+      "mb@RYN": {
+        "subdivided": false
+      },
+      "mb@XXX": {
+        "subdivided": false
+      },
+      "mb@BD": {
+        "subdivided": false
+      },
+      "mb@PTT": {
+        "subdivided": false
+      },
+      "mb@EXPALG": {
+        "subdivided": false
+      },
+      "ge@OMB": {
+        "subdivided": false
+      },
+      "ge@ARM": {
+        "subdivided": false
+      },
+      "ge@RYN": {
+        "subdivided": false
+      },
+      "ge@XXX": {
+        "subdivided": false
+      },
+      "ge@BD": {
+        "subdivided": false
+      },
+      "ge@PTT": {
+        "subdivided": false
+      },
+      "ge@EXPALG": {
+        "subdivided": false
+      },
+      "ft@OMB": {
+        "subdivided": false
+      },
+      "ft@ARM": {
+        "subdivided": false
+      },
+      "ft@RYN": {
+        "subdivided": false
+      },
+      "ft@XXX": {
+        "subdivided": false
+      },
+      "ft@BD": {
+        "subdivided": false
+      },
+      "ft@PTT": {
+        "subdivided": false
+      },
+      "ft@EXPALG": {
+        "subdivided": false
+      },
+      "fti@OMB": {
+        "subdivided": false
+      },
+      "fti@ARM": {
+        "subdivided": false
+      },
+      "fti@RYN": {
+        "subdivided": false
+      },
+      "fti@XXX": {
+        "subdivided": false
+      },
+      "fti@BD": {
+        "subdivided": false
+      },
+      "fti@PTT": {
+        "subdivided": false
+      },
+      "fti@EXPALG": {
+        "subdivided": false
+      },
+      "nt@OMB": {
+        "subdivided": false
+      },
+      "nt@ARM": {
+        "subdivided": false
+      },
+      "nt@RYN": {
+        "subdivided": false
+      },
+      "nt@BD": {
+        "subdivided": false
+      },
+      "nt@PTT": {
+        "subdivided": false
+      },
+      "nt@EXPALG": {
+        "subdivided": false
+      },
+      "wd@ARM": {
+        "subdivided": true
+      },
+      "wd@RYN": {
+        "subdivided": true
+      },
+      "wd@XXX": {
+        "subdivided": true
+      },
+      "wd@BD": {
+        "subdivided": true
+      },
+      "wd@PTT": {
+        "subdivided": true
+      },
+      "wd@EXPALG": {
+        "subdivided": true
+      },
+      "mb_wd@ARM": {
+        "subdivided": true
+      },
+      "mb_wd@RYN": {
+        "subdivided": true
+      },
+      "mb_wd@XXX": {
+        "subdivided": true
+      },
+      "mb_wd@BD": {
+        "subdivided": true
+      },
+      "mb_wd@PTT": {
+        "subdivided": true
+      },
+      "mb_wd@EXPALG": {
+        "subdivided": true
+      },
+      "ge_wd@ARM": {
+        "subdivided": true
+      },
+      "ge_wd@RYN": {
+        "subdivided": true
+      },
+      "ge_wd@XXX": {
+        "subdivided": true
+      },
+      "ge_wd@BD": {
+        "subdivided": true
+      },
+      "ge_wd@PTT": {
+        "subdivided": true
+      },
+      "ge_wd@EXPALG": {
+        "subdivided": true
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "name": "OMB",
+        "tier": "tx@OMB"
+      },
+      "S2": {
+        "name": "ARM",
+        "tier": "tx@ARM"
+      },
+      "S3": {
+        "name": "RYN",
+        "tier": "tx@RYN"
+      },
+      "S4": {
+        "name": "XXX",
+        "tier": "tx@XXX"
+      },
+      "S5": {
+        "name": "BD",
+        "tier": "tx@BD"
+      },
+      "S6": {
+        "name": "PTT",
+        "tier": "tx@PTT"
+      },
+      "S7": {
+        "name": "EXPALG",
+        "tier": "tx@EXPALG"
+      }
+    }
+  },
+  "a73c411b-80e3-48c0-bafa-0bbed5575c53": {
+    "timed": true,
+    "story ID": "a73c411b-80e3-48c0-bafa-0bbed5575c53",
+    "title": {
+      "_default": "kouambo_school_description_ph"
+    },
+    "media": {
+      "audio": "kouambo_school_description_ph.wav",
+      "video": ""
+    },
+    "languages": [],
+    "date_created": "",
+    "date_uploaded": "5/5/2026",
+    "source": {
+      "_default": ""
+    },
+    "description": "",
+    "genre": "",
+    "author": "",
+    "glosser": "",
+    "speakers": [
+      "mamia jacques",
+      "manzuer",
+      "Mimbee paul1"
+    ],
+    "xml_file_name": "kouambo_school_description_ph.eaf",
+    "source_filetype": "ELAN",
+    "tier IDs": {
+      "daniel duke ft Fren": {
+        "subdivided": false
+      },
+      "mamia jacques ft Fren": {
+        "subdivided": false
+      },
+      "manzuer ft Fren": {
+        "subdivided": false
+      },
+      "Mimbee paul1 ft Fren": {
+        "subdivided": false
+      },
+      "mamia jacques ph": {
+        "subdivided": false
+      },
+      "manzuer ph": {
+        "subdivided": false
+      },
+      "mj-fr-mb": {
+        "subdivided": false
+      },
+      "m-fr-morph": {
+        "subdivided": false
+      }
+    },
+    "speaker IDs": {
+      "S1": {
+        "tier": "daniel duke ft Fren"
+      },
+      "S2": {
+        "tier": "mamia jacques ft Fren"
+      },
+      "S3": {
+        "tier": "manzuer ft Fren"
+      },
+      "S4": {
+        "tier": "Mimbee paul1 ft Fren"
+      },
+      "S5": {
+        "name": "mamia jacques",
+        "tier": "mamia jacques ph"
+      },
+      "S6": {
+        "name": "manzuer",
+        "tier": "manzuer ph"
       }
     }
   }

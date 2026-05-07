@@ -7,3 +7,6 @@ bundle-offline/
 build/
 data/json_files/*.json
 data/search_index.json
+data/elan_files/
+data/media_files/
+jsx/App/Stories/Story/Display/SentenceOriginal.jsx
