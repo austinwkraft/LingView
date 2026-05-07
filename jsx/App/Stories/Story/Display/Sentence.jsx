@@ -8,7 +8,8 @@ const glossDict = require('./gloss_dict.json');
 // but not when used as page text (e.g. <label>{tier_name}</label>)
 
 function GlossLine({text}) {
-	// modified version of the tooltip glossing originally built into Row
+	// I/P: text, a string with the text of the glossing line
+	// O/P: array of text components including tooltips as needed
 	const word = String(text);
 	let expArray = [];
 	// Split the string into individual morphemes
@@ -72,7 +73,7 @@ function Row({ numSlots, values, tier }) {
 	// and 5-7.
 	const finalSlot = numSlots;
 	let currentSlot = 0;
-	let output = []; // Regular annotations.
+	let output = []; 
 
 	for (const v of values) {
 		const startSlot = v['start_slot'];
@@ -82,16 +83,16 @@ function Row({ numSlots, values, tier }) {
 		// Add blank space before current value:
 		if (startSlot > currentSlot) {
 			const diff = String(startSlot - currentSlot);
-			output.push(<td key={id.generate()} colSpan={diff} />);
+			output.push(<td key={id.generate()} colSpan={diff}> </td>);
 		}
 		// Create element with correct 'colSpan' width:
 		const size = String(endSlot - startSlot);
 		if (tier == 'morpheme gloss'){ 
 			// Only add glossing explanation on the tier corresponding to the morpheme gloss
 			// Generate the components for the tooltips
-			let exp = <GlossLine key={id.generate()} text={text}/>
+			let exp = <GlossLine key={id.generate()} text={text}/>;
 			// add to the table data component
-			output.push(<td key={id.generate()} colSpan={size}>{exp}</td>)
+			output.push(<td key={id.generate()} colSpan={size}>{exp}</td>);
 		}
 		else {
 			output.push(<td key={id.generate()} colSpan={size}>{text}</td>);
@@ -106,27 +107,163 @@ function Row({ numSlots, values, tier }) {
 	return <tr data-tier={htmlEscape(tier)}>{output}</tr>;
 }
 
+function IndependentTiers({ Tiers }) {
+	// I/P: Tiers, list of independent tiers from Sentence
+	// O/P: list of flex items containing the idependant tiers represented as p elements
+	let expArray = [];
+	for (const {values, tier} of Tiers) {
+		// add the glossing explainations for the gloss tier if applicable
+		if (tier == 'morpheme gloss') {
+			let exp = <GlossLine key={id.generate()} text={values[0]['value']}/>;
+			expArray.push(<p key={id.generate()} className = "indepItem" data-tier={htmlEscape(tier)}>{exp}</p>);
+		} else {
+			expArray.push(<p key={id.generate()} className = "indepItem" data-tier={htmlEscape(tier)}>{values[0]['value']}</p>);
+		}
+	}
+	return expArray;
+}
+
+function DependentTiers({ Tiers, tierList }) {
+	// I/P: Tiers,list of dependent tiers from Sentence
+	//	    tierList, list of dependent tier names
+	// O/P: list of dependent tier flex items containing each segment of the dependent tiers grouped by column
+
+	// Each dependent tier item represents a segment of the dependent tiers that share the same slot range.
+	// The segments are separated into slot ranges based on the first dependent tier, as all other tiers must be partitioned
+	// within the boundaries of its parent tier, and parent tiers must appear before child tiers.
+	// To accomplish this, we create a map from starting slot number to tier segments that fall within that slot range. 
+	// We then go through this mapping and create a dependent tier item for each slot range containing a table displaying the 
+	// segments for each tier, including further tier subdivisions and filling in blank slots.
+
+	let slots = {}; // map from slot number to list of {value, tier} objects corresponding to that slot. 
+	let slotArray = []; // list of slot numbers
+	let expArray = []; // array to collect the output expressions
+	// make the slots map from the first dependent tier (as it has the minimal partition of the sentence)
+	// populate the slot map with the values from the dependent tiers.
+	let counter = 0;
+	for (const {values, tier} of Tiers) {
+		if (counter == 0) {
+			// create the slot map using start slots from the first dependent tier
+			for (const v of values) {
+				slotArray.push(v['start_slot']);
+				slots[v['start_slot']] = [];
+			}
+			counter++;
+		}
+		// populate the slot map with values
+		for (const v of values) {
+			// get the start slot for the slot range that this value falls within
+			let slotNum = v['start_slot'];
+			while (!slotArray.includes(slotNum)) {
+				// if the start slot is not in the slot array, decrement until we find the closest slot
+				slotNum--;
+				if (slotNum < 0) {
+					// this should never happen, but just in case, assign to slot 0
+					slotNum = 0;
+					break;
+				}
+			}
+			// add the value (with tier name) to the corresponding slot in the slot map
+			slots[slotNum].push({value: v['value'], tier: tier, start_slot: v['start_slot'], end_slot: v['end_slot']});
+		}
+	}
+	// go through the slot map and create a dependent tier item for each slot range
+	for (var key in slots) {
+		// get slot range from first value (as the first value will be from the first dependent tier)
+		const end = slots[key][0]['end_slot'];
+		const start = slots[key][0]['start_slot'];
+		let numSlots = end - start;
+		// group values by tier so that values from the same tier are in the same row of the table
+		// there will only be multiple values for a tier if that tier has more subdivisions than the first dependent tier
+		const tierGroups = Object.groupBy(slots[key], x => x.tier);
+		let rowArray = [];
+		// for each tier, create a table row containing the values for this slot range and fill in blank slots as needed
+		for (const tier of tierList) {
+			let values = tierGroups[tier];
+			// if there are no values, add a blank row
+			if (!values) {
+				rowArray.push(<tr data-tier={htmlEscape(tier)}><td key={id.generate()}> </td></tr>);
+				continue;
+			}
+			let currentSlot = key;
+			let exp = [];
+			// iterate through values and add table data components with correct colSpans and fill in blank slots as needed
+			for (const value of values) {
+				const startSlot = value['start_slot'];
+				const endSlot = value['end_slot'];
+				const text = value['value'];
+				// fill in blank slots before current value
+				if (currentSlot < startSlot) {
+					const diff = String(startSlot - currentSlot);
+					exp.push(<td key={id.generate()} colSpan={diff}/>);
+				}
+				const size = String(endSlot - startSlot);
+				// add glossing explanation for the gloss tier if applicable
+				if (tier == 'morpheme gloss') {
+					let gloss = <GlossLine key={id.generate()} text={text}/>;
+					exp.push(<td key={id.generate()} colSpan={size}>{gloss}</td>);
+				} else {
+					exp.push(<td key={id.generate()} colSpan={size}>{text}</td>);
+				}
+				currentSlot = endSlot;
+			}
+			// fill in blank slots at the end of the row if needed
+			if (currentSlot < key + numSlots) {
+				const diff = String(key + numSlots - currentSlot);
+				exp.push(<td key={id.generate()} colSpan={diff}/>);
+			}
+			// push the filled row to the row array
+			rowArray.push(<tr data-tier={htmlEscape(tier)}>{exp}</tr>);
+		}
+		// push the dependent tier item for this slot range to the expression array
+		expArray.push(<table key={id.generate()} className="depItem"><tbody>{rowArray}</tbody></table>);
+	}
+	return expArray;
+}
+
 export function Sentence({ sentence }) {
 	// I/P: sentence, a sentence
-	// O/P: table of glossed Row components
-	let rowList = []; // to be output
+	// O/P: flexbox container with items corresponding to independent tiers and grouped dependent tiers
+
+	// Split tiers in to top row, independent, and dependent tiers then generate the flex items for each category
+	let itemList = []; // to be output
 	const numSlots = sentence['num_slots'];
-	// Add the indepentent tier, i.e., the top row, to the list of rows.
-	// Note that 'colSpan={numSlots}' ensures that this row spans the entire table.
-  if (sentence['noTopRow'] == null || sentence['noTopRow'] === 'false') {
-    rowList.push(
-      <tr data-tier={htmlEscape(sentence['tier'])}>
-        <td colSpan={numSlots} className="topRow">{sentence['text']}</td>
-      </tr>
+	// identify the top row if it exists, and add the top row item to the item list
+  	if (sentence['noTopRow'] == null || sentence['noTopRow'] === 'false') {
+    itemList.push(
+      <p className="topRowItem" data-tier={htmlEscape(sentence['tier'])}>
+		{sentence['text']}
+      </p>
     );
-  }
-	const dependents = sentence['dependents']; // list of dependent tiers, flat structure
-	// Add each dependent tier to the row list:
-	for (const {values, tier} of dependents) {
-		// Tier attribute will be used for hiding/showing tiers.
-		rowList.push(<Row key={id.generate()} numSlots={numSlots} values={values} tier={tier} />);
+  	}
+	const dependents = sentence['dependents']; // all tiers that are not the top row tier
+	// Note: I use independent and dependent tiers here to refer to tiers which are not partitioned into segments (independent)
+	// vs tiers which are partitioned into segments (dependent), not the ELAN usage of dependents
+	let indepTiers = new Set();
+	let noteTiers = new Set(); // independenttiers with 'note' in the name are put at the end of the sentence display
+	let depTiers = new Set();
+	let depTiersList = [];
+	for (const dep of dependents) {
+		// if there is only one segment and it spans the entire sentence, this is an independent tier
+		if (dep['values'].length == 1 && 
+			dep['values'][0]['start_slot'] == 0 &&
+			dep['values'][0]['end_slot'] == numSlots) {
+			if (dep['tier'].toLowerCase().includes('note')) {
+				noteTiers.add(dep);
+			} else {
+				indepTiers.add(dep);
+			}
+		// otherwise add the tier to the dependent tier list
+		} else {
+			depTiers.add(dep);
+			depTiersList.push(dep['tier']);
+		}
 	}
-	return <table className="gloss"><tbody>{rowList}</tbody></table>;
+	// generate the flex items for each category and add to the item list
+	itemList = [...itemList, <IndependentTiers key={id.generate()} Tiers={indepTiers}/>];
+	itemList = [...itemList, <DependentTiers key={id.generate()} Tiers={depTiers} tierList={depTiersList}/>];
+	itemList = [...itemList, <IndependentTiers key={id.generate()} Tiers={noteTiers}/>];
+	return <div className="sentenceContainer">{itemList}</div>;
 }
 
 
@@ -162,5 +299,22 @@ export function SearchSentence({ sentence }) {
 	url += ("story/" + sentence["story ID"] + "?" + query_index);
 
     // hacky way to introduce a line break (extra <tr> of height 12px)
-	return <div className="searchSentence"><table className="gloss"><thead><tr><td><b> <TranslatableText dictionary={storySearchText} /></b>: {title}</td></tr><tr style={{"height": "12px"}}></tr></thead><tbody>{rowList}</tbody></table><div class="storyLink"><a target="_blank" href={url}><TranslatableText dictionary={storySearchViewStoryText} /></a></div></div>;
+	return <div className="searchSentence">
+				<table className="gloss">
+					<thead>
+						<tr>
+					    	<td>
+								<b> <TranslatableText dictionary={storySearchText} /></b>: {title}
+							</td>
+						</tr>
+						<tr style={{"height": "12px"}}></tr>
+					</thead>
+					<tbody>{rowList}</tbody>
+				</table>
+				<div class="storyLink">
+					<a target="_blank" href={url}>
+						<TranslatableText dictionary={storySearchViewStoryText} />
+					</a>
+				</div>
+			</div>;
 }

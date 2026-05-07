@@ -21,8 +21,10 @@ class TierCheckbox extends React.Component {
 
       if (this.state.checkboxState) {
          $("tr[data-tier='" + htmlEscape(this.props.tier_name) + "']").css('display', 'none');
+         $("p[data-tier='" + htmlEscape(this.props.tier_name) + "']").css('display', 'none');
       } else {
          $("tr[data-tier='" + htmlEscape(this.props.tier_name) + "']").css('display', 'table-row');
+         $("p[data-tier='" + htmlEscape(this.props.tier_name) + "']").css('display', 'block');
       }
    }
 
