@@ -5,15 +5,19 @@ function buildSearch(jsonFileNames) {
     // Concatenate sentences from each story together
     let sentences = [];
     let tierNames = new Set(); // the set of tier checkboxes that will be displayed on the Search page
+    let speakerNames = new Set(); // the set of speaker checkboxes that will be displayed on the Search page
     for (const jsonFileName of jsonFileNames) {
         const jsonPath = "data/json_files/" + jsonFileName;
         const f = require(path.resolve(__dirname, '../' + jsonPath));
         const storyID = f.metadata["story ID"];
         const title = f.metadata["title"]["_default"];
+        const speakers = f.metadata["speakers"];
+        for (const speaker of speakers) speakerNames.add(speaker);
         const newSentences = f["sentences"];
         for (sentence in newSentences) {
             newSentences[sentence]["story ID"] = storyID;
             newSentences[sentence]["title"] = title;
+            newSentences[sentence]["speakers"] = speakers;
         }
         sentences = sentences.concat(newSentences);
     }
@@ -28,6 +32,7 @@ function buildSearch(jsonFileNames) {
           "title" : sentence["title"],
           "start_time_ms" : sentence["start_time_ms"],
           "sentence_id" : sentence["sentence_id"], 
+          "speakers" : sentence["speakers"],
           "dependents" : {}
         };
 
@@ -46,7 +51,7 @@ function buildSearch(jsonFileNames) {
         data.push(reformatted);
     }
   
-    return { "tier IDs": Array.from(tierNames), "sentences": data };
+    return { "tier IDs": Array.from(tierNames), "speaker names": Array.from(speakerNames), "sentences": data };
 }
 
 module.exports = { buildSearch };

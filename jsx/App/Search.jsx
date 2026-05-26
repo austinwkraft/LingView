@@ -53,6 +53,7 @@ export class Search extends React.Component {
         document.getElementsByName("fields").forEach(function (e) {
             if (e.checked) fields.push(decode(`dependents.${e.id}.value`));
         });
+        //console.log("fields:", fields);
 
         var options = {
             isCaseSensitive: false,
@@ -64,7 +65,24 @@ export class Search extends React.Component {
             keys: fields,
             useExtendedSearch: true
         };
-        return new Fuse(this.state.searchIndex.sentences, options)
+
+        let speakers = [];
+        document.getElementsByName("speakers").forEach(function (e){
+            if (e.checked) speakers.push(decode(e.id));
+        });
+        //console.log("speakers:", speakers);
+        let fileredSentences = [];
+        for (const sentence of this.state.searchIndex.sentences) {
+            for (const speaker of sentence["speakers"]) {
+                if (speakers.includes(decode(speaker))) {
+                    fileredSentences.push(sentence);
+                    break;
+                }
+            }
+        }
+        //console.log("searchIndex.sentences:", this.state.searchIndex.sentences);
+        //console.log("filteredSentences:", fileredSentences);
+        return new Fuse(fileredSentences, options)
     }
 
     search(rebuild=true) {
@@ -96,6 +114,7 @@ export class Search extends React.Component {
     genCheckboxes () { // called by render()
         let checkboxes = [];
         let tiers = this.state.searchIndex['tier IDs'];
+        checkboxes.push(<label><b>Tiers to search:</b></label>);
         tiers.forEach((tier) => {
             checkboxes.push(
                 <input id={htmlEscape(tier)} name="fields" type="checkbox" onChange={this.search.bind(this)}
@@ -104,6 +123,16 @@ export class Search extends React.Component {
             checkboxes.push(<label>{tier}</label>);
             checkboxes.push(<span>&nbsp;&nbsp;</span>);
         })
+        let speakerNames = this.state.searchIndex['speaker names'];
+        checkboxes.push(<label><b>Speakers to search:</b></label>);
+        speakerNames.forEach((speaker) => {
+            checkboxes.push(
+                <input id={htmlEscape(speaker)} name="speakers" type="checkbox" onChange={this.search.bind(this)}
+                defaultChecked />
+            );
+            checkboxes.push(<label>{speaker}</label>);
+            checkboxes.push(<span>&nbsp;&nbsp;</span>);
+        });
         return checkboxes
     }
 
