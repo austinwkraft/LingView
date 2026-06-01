@@ -72,11 +72,15 @@ export class Search extends React.Component {
         });
         //console.log("speakers:", speakers);
         let fileredSentences = [];
-        for (const sentence of this.state.searchIndex.sentences) {
-            for (const speaker of sentence["speakers"]) {
-                if (speakers.includes(decode(speaker))) {
-                    fileredSentences.push(sentence);
-                    break;
+        if (speakers.length == 0) {
+            fileredSentences = this.state.searchIndex.sentences;
+        } else {
+            for (const sentence of this.state.searchIndex.sentences) {
+                for (const speaker of sentence["speakers"]) {
+                    if (speakers.includes(decode(speaker))) {
+                        fileredSentences.push(sentence);
+                        break;
+                    }
                 }
             }
         }
@@ -124,11 +128,13 @@ export class Search extends React.Component {
             checkboxes.push(<span>&nbsp;&nbsp;</span>);
         })
         let speakerNames = this.state.searchIndex['speaker names'];
+        checkboxes.push(<br />);
+        checkboxes.push(<br />);
         checkboxes.push(<label><b>Speakers to search:</b></label>);
         speakerNames.forEach((speaker) => {
             checkboxes.push(
                 <input id={htmlEscape(speaker)} name="speakers" type="checkbox" onChange={this.search.bind(this)}
-                defaultChecked />
+                defaultUnchecked />
             );
             checkboxes.push(<label>{speaker}</label>);
             checkboxes.push(<span>&nbsp;&nbsp;</span>);
