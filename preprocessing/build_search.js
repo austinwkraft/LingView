@@ -11,13 +11,21 @@ function buildSearch(jsonFileNames) {
         const f = require(path.resolve(__dirname, '../' + jsonPath));
         const storyID = f.metadata["story ID"];
         const title = f.metadata["title"]["_default"];
-        const speakers = f.metadata["speakers"];
-        for (const speaker of speakers) speakerNames.add(speaker);
+        const speakers = f.metadata["speaker IDs"];
+        for (var speaker in speakers) {
+            if (speakers[speaker]["name"] != null) {
+                speakerNames.add(speakers[speaker]["name"]);
+            }
+        }
         const newSentences = f["sentences"];
         for (sentence in newSentences) {
             newSentences[sentence]["story ID"] = storyID;
             newSentences[sentence]["title"] = title;
-            newSentences[sentence]["speakers"] = speakers;
+            const speakerID = newSentences[sentence]["speaker"];
+            newSentences[sentence]["speakers"] = [];
+            if (speakers[speakerID]["name"] != null) {
+                newSentences[sentence]["speakers"].push(speakers[speakerID]["name"]);
+            }
         }
         sentences = sentences.concat(newSentences);
     }
