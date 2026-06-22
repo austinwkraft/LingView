@@ -70,20 +70,33 @@ export class Search extends React.Component {
         document.getElementsByName("speakers").forEach(function (e){
             if (e.checked) speakers.push(decode(e.id));
         });
+        let dialects = [];
+        document.getElementsByName("dialects").forEach(function (e){ 
+            if (e.checked) dialects.push(decode(e.id));
+        })
         //console.log("speakers:", speakers);
-        let fileredSentences = [];
-        if (speakers.length == 0) {
-            fileredSentences = this.state.searchIndex.sentences;
-        } else {
-            for (const sentence of this.state.searchIndex.sentences) {
+        let fileredSentences = this.state.searchIndex.sentences.filter(sentence => {
+            if (speakers.length != 0) {
+                if (sentence["speakers"].length == 0) return false;
                 for (const speaker of sentence["speakers"]) {
-                    if (speakers.includes(decode(speaker))) {
-                        fileredSentences.push(sentence);
-                        break;
+                    if (!speakers.includes(decode(speaker))) {
+                        return false;
                     }
                 }
             }
-        }
+            if (dialects.length != 0) {
+                if (sentence["dialects"].length == 0) return false;
+                for (const dialect of sentence["dialects"]) {
+                    if (!dialects.includes(decode(dialect))) {
+                        return false;
+                    }
+                }
+            }
+            console.log("sentence duration:", sentence["story duration"], "slider value:", document.getElementById("duration").value);
+            if (sentence["story duration"] > document.getElementById("duration").value) return false;
+            return true;
+        });
+            
         //console.log("searchIndex.sentences:", this.state.searchIndex.sentences);
         //console.log("filteredSentences:", fileredSentences);
         return new Fuse(fileredSentences, options)
@@ -139,7 +152,46 @@ export class Search extends React.Component {
             checkboxes.push(<label>{speaker}</label>);
             checkboxes.push(<span>&nbsp;&nbsp;</span>);
         });
-        return checkboxes
+        let dialectNames = this.state.searchIndex['dialect names'];
+        checkboxes.push(<br />);
+        checkboxes.push(<br />);
+        checkboxes.push(<label><b>Dialects to search:</b></label>);
+        dialectNames.forEach((dialect) => {
+            checkboxes.push(
+                <input id={htmlEscape(dialect)} name="dialects" type="checkbox" onChange={this.search.bind(this)}
+                defaultUnchecked />
+            );
+            checkboxes.push(<label>{dialect}</label>);
+            checkboxes.push(<span>&nbsp;&nbsp;</span>);
+        });
+        checkboxes.push(<br />);
+        checkboxes.push(<br />);
+        checkboxes.push(<div class="slidecontainer">
+                        <label><b>Maximum Media Duration:</b></label> <br />
+                        <form>
+                        <input type="range" class="slider" id="duration" defaultValue={this.state.searchIndex['max duration']} 
+                            min={this.state.searchIndex['min duration']} max={this.state.searchIndex['max duration']} 
+                            onInput={function () {
+                                document.getElementById("durationValue").innerHTML = document.getElementById("duration").value;
+                            }}
+                            onChange={this.search.bind(this)} />
+                        <p>Value (seconds): <span id="durationValue"></span></p>
+                        </form>
+                        </div>);
+        let button = <button class="searchOptsCollapsible" onClick={this.filterOptionsToggle.bind(this)}>Show Filters</button>;
+        
+        return <div> {button} <div id="checkboxContainer">
+            {checkboxes}
+        </div></div>;
+    }
+
+    filterOptionsToggle() {
+        let container = document.getElementById("checkboxContainer");
+        if (container.style.display === "none") {
+            container.style.display = "block";
+        } else {
+            container.style.display = "none";
+        }
     }
 
     goToNextSearchPage() {
@@ -163,6 +215,8 @@ export class Search extends React.Component {
                 <p>To search for forms containing two specific elements, separate the elements with a space. For example, 'FACT PUNC' will return all utterances containing a word with both FACT and PUNC. To search for forms containing one element or another, separate the elements with the pipe symbol |. For example, 'FACT|HAB' will return all utterances containing either FACT or HAB.</p>
                 <br />
                 {this.genCheckboxes()}
+                <br />
+                <div><i>Showing {this.state.displayedSearchResultsIndex} to {Math.min(this.state.displayedSearchResultsIndex + SEARCH_PAGE_SIZE, this.state.searchResults.length)} of {this.state.searchResults.length} results</i></div>
                 <br />
                 <div id="searchResults">{results}</div>
                 {this.state.searchResults.length > 0 ?

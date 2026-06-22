@@ -6,25 +6,43 @@ function buildSearch(jsonFileNames) {
     let sentences = [];
     let tierNames = new Set(); // the set of tier checkboxes that will be displayed on the Search page
     let speakerNames = new Set(); // the set of speaker checkboxes that will be displayed on the Search page
+    let dialectNames = new Set(); // the set of dialect checkboxes that will be displayed on the Search page
+    let maxDuration = 0; // the maximum story duration across all stories, used to set the max value of the time slider on the Search page
+    let minDuration = Infinity; // the minimum story duration across all stories, used to set the min value of the time slider on the Search page
     for (const jsonFileName of jsonFileNames) {
         const jsonPath = "data/json_files/" + jsonFileName;
         const f = require(path.resolve(__dirname, '../' + jsonPath));
         const storyID = f.metadata["story ID"];
         const title = f.metadata["title"]["_default"];
+        const duration = f["sentences"][f["sentences"].length - 1]["end_time_ms"] / 1000;
+        if (duration > maxDuration) {
+            maxDuration = duration;
+        }
+        if (duration < minDuration) {
+            minDuration = duration;
+        }
         const speakers = f.metadata["speaker IDs"];
         for (var speaker in speakers) {
             if (speakers[speaker]["name"] != null) {
                 speakerNames.add(speakers[speaker]["name"]);
+            }
+            if (speakers[speaker]["language"] != null) {
+                dialectNames.add(speakers[speaker]["language"]);
             }
         }
         const newSentences = f["sentences"];
         for (sentence in newSentences) {
             newSentences[sentence]["story ID"] = storyID;
             newSentences[sentence]["title"] = title;
+            newSentences[sentence]["story duration"] = duration;
             const speakerID = newSentences[sentence]["speaker"];
             newSentences[sentence]["speakers"] = [];
+            newSentences[sentence]["dialects"] = [];
             if (speakers[speakerID]["name"] != null) {
                 newSentences[sentence]["speakers"].push(speakers[speakerID]["name"]);
+            }
+            if (speakers[speakerID]["language"] != null) {
+                newSentences[sentence]["dialects"].push(speakers[speakerID]["language"]);
             }
         }
         sentences = sentences.concat(newSentences);
@@ -39,8 +57,10 @@ function buildSearch(jsonFileNames) {
           "story ID" : sentence["story ID"],
           "title" : sentence["title"],
           "start_time_ms" : sentence["start_time_ms"],
+          "story duration" : sentence["story duration"],
           "sentence_id" : sentence["sentence_id"], 
           "speakers" : sentence["speakers"],
+          "dialects" : sentence["dialects"],
           "dependents" : {}
         };
 
@@ -59,7 +79,7 @@ function buildSearch(jsonFileNames) {
         data.push(reformatted);
     }
   
-    return { "tier IDs": Array.from(tierNames), "speaker names": Array.from(speakerNames), "sentences": data };
+    return { "tier IDs": Array.from(tierNames), "speaker names": Array.from(speakerNames), "dialect names": Array.from(dialectNames), "max duration": maxDuration, "min duration": minDuration, "sentences": data };
 }
 
 module.exports = { buildSearch };
