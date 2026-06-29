@@ -3,6 +3,7 @@ import Fuse from 'fuse.js';
 import { SearchSentence } from './Stories/Story/Display/Sentence.jsx';
 import { TranslatableText } from './locale/TranslatableText.jsx'
 import { searchPagePromptText, searchPageNextButtonText, searchPagePrevButtonText } from './locale/LocaleConstants.jsx';
+const dialect_filter = require('./dialect_filter.json');
 var htmlEscape = require('ent/encode');
 var decode = require('ent/decode');
 // Note: tier names should be escaped when used as HTML attributes (e.g. data-tier=tier_name),
@@ -86,13 +87,22 @@ export class Search extends React.Component {
             }
             if (dialects.length != 0) {
                 if (sentence["dialects"].length == 0) return false;
-                for (const dialect of sentence["dialects"]) {
-                    if (!dialects.includes(decode(dialect))) {
+                var list = new Set();
+                for (const category of dialects) {
+                    if (dialect_filter[category].length == 0) {
+                        list.clear();
+                        break;
+                    } else {
+                        list.add(...dialect_filter[category]);
+                    }
+                }
+                if (list.size != 0) {
+                    if (!sentence["dialects"].some(dialect => list.has(dialect))) {
                         return false;
                     }
                 }
             }
-            console.log("sentence duration:", sentence["story duration"], "slider value:", document.getElementById("duration").value);
+          //console.log("sentence duration:", sentence["story duration"], "slider value:", document.getElementById("duration").value);
             if (sentence["story duration"] > document.getElementById("duration").value) return false;
             return true;
         });
@@ -152,7 +162,7 @@ export class Search extends React.Component {
             checkboxes.push(<label>{speaker}</label>);
             checkboxes.push(<span>&nbsp;&nbsp;</span>);
         });
-        let dialectNames = this.state.searchIndex['dialect names'];
+        let dialectNames = Object.keys(dialect_filter);
         checkboxes.push(<br />);
         checkboxes.push(<br />);
         checkboxes.push(<label><b>Dialects to search:</b></label>);
@@ -172,10 +182,10 @@ export class Search extends React.Component {
                         <input type="range" class="slider" id="duration" defaultValue={this.state.searchIndex['max duration']} 
                             min={this.state.searchIndex['min duration']} max={this.state.searchIndex['max duration']} 
                             onInput={function () {
-                                document.getElementById("durationValue").innerHTML = document.getElementById("duration").value;
+                                document.getElementById("durationValue").innerHTML = (document.getElementById("duration").value / 60).toFixed(0) + ":" + (document.getElementById("duration").value % 60).toString().padStart(2, '0');
                             }}
                             onChange={this.search.bind(this)} />
-                        <p>Value (seconds): <span id="durationValue"></span></p>
+                        <p>Value (minutes): <span id="durationValue"></span></p>
                         </form>
                         </div>);
         let button = <button class="searchOptsCollapsible" onClick={this.filterOptionsToggle.bind(this)}>Show Filters</button>;
@@ -216,7 +226,7 @@ export class Search extends React.Component {
                 <br />
                 {this.genCheckboxes()}
                 <br />
-                <div><i>Showing {this.state.displayedSearchResultsIndex} to {Math.min(this.state.displayedSearchResultsIndex + SEARCH_PAGE_SIZE, this.state.searchResults.length)} of {this.state.searchResults.length} results</i></div>
+                <div><i>Showing {Math.min(this.state.displayedSearchResultsIndex + 1, this.state.searchResults.length)} to {Math.min(this.state.displayedSearchResultsIndex + SEARCH_PAGE_SIZE, this.state.searchResults.length)} of {this.state.searchResults.length} results</i></div>
                 <br />
                 <div id="searchResults">{results}</div>
                 {this.state.searchResults.length > 0 ?

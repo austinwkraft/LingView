@@ -6,7 +6,6 @@ function buildSearch(jsonFileNames) {
     let sentences = [];
     let tierNames = new Set(); // the set of tier checkboxes that will be displayed on the Search page
     let speakerNames = new Set(); // the set of speaker checkboxes that will be displayed on the Search page
-    let dialectNames = new Set(); // the set of dialect checkboxes that will be displayed on the Search page
     let maxDuration = 0; // the maximum story duration across all stories, used to set the max value of the time slider on the Search page
     let minDuration = Infinity; // the minimum story duration across all stories, used to set the min value of the time slider on the Search page
     for (const jsonFileName of jsonFileNames) {
@@ -25,9 +24,6 @@ function buildSearch(jsonFileNames) {
         for (var speaker in speakers) {
             if (speakers[speaker]["name"] != null) {
                 speakerNames.add(speakers[speaker]["name"]);
-            }
-            if (speakers[speaker]["language"] != null) {
-                dialectNames.add(speakers[speaker]["language"]);
             }
         }
         const newSentences = f["sentences"];
@@ -79,7 +75,7 @@ function buildSearch(jsonFileNames) {
         data.push(reformatted);
     }
   
-    return { "tier IDs": Array.from(tierNames), "speaker names": Array.from(speakerNames), "dialect names": Array.from(dialectNames), "max duration": maxDuration, "min duration": minDuration, "sentences": data };
+    return { "tier IDs": Array.from(tierNames), "speaker names": Array.from(speakerNames), "max duration": maxDuration, "min duration": minDuration, "sentences": data };
 }
 
 module.exports = { buildSearch };
