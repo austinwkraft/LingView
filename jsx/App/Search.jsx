@@ -183,7 +183,7 @@ export class Search extends React.Component {
         filterOpts.push(<br />);
         filterOpts.push(<br />);
         filterOpts.push(<div class="slidecontainer">
-                        <label><b>Maximum Media Duration:</b></label> <br />
+                        <label><b>Maximum Media Duration (This slider is activated only if there are multiple files in the search query):</b></label> <br />
                         <form>
                         <input type="range" class="slider" id="duration" defaultValue={this.state.searchIndex['max duration']} 
                             min={this.state.searchIndex['min duration']} max={this.state.searchIndex['max duration']} 
